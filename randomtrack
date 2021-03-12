@@ -7,6 +7,7 @@ function track(provider='', query = '', data = '') {
 
     var rows = data.split('<EOL>');
     var tracks = [];
+    var type = 'unknown';
     for (var i = 0; i < rows.length; i++) {
         var row = rows[i].trim();
         var cols = row.split('\t');
