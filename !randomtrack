@@ -1,0 +1,96 @@
+/*
+ * Nightbot command:
+ * !editcom -ul=everyone -cd=5 !randomtrack $(eval track('$(provider)', '$(query)', "$(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv)"); $(urlfetch json https://raw.github.com/JJCann/-randomtrack/new/main);)
+ */
+function track(provider='', query = '', data = '') {
+    query = normalize(query);
+
+    var rows = data.split('<EOL>');
+    var tracks = [];
+    var type = 'unknown';
+    for (var i = 0; i < rows.length; i++) {
+        var row = rows[i].trim();
+        var cols = row.split('\t');
+
+        if (cols.length === 1) {
+            type = cols[0];
+        } else if (cols.length === 5) {
+            tracks.push(new Track(type, cols[0], cols[1], cols[2], cols[3], cols[4]));
+        }
+    }
+    
+    /* Find all tracks that match the specified criteria */
+    var matching_tracks = tracks.filter(function (track) {
+        return track.matches(query);
+    });
+    
+    
+    /* Output a random track (or error message) */
+    if (matching_tracks.length > 0) {
+        var i = Math.floor(Math.random() * matching_tracks.length);
+        var track = matching_tracks[i];
+        return 'Random track ' + i + '/' + matching_tracks.length + ': ' + track;
+    } else {
+        return 'Could not find a matching random track ¯\\_(ツ)_/¯';
+    }
+
+    return query + 'which platform? (Crew / Serious / Fun / Rally)';
+}
+
+function normalize(text) {
+    if (!text) {
+        text = '';
+    }
+
+    /* Convert to lowercase */
+    text = text.toLowerCase();
+
+    /* Remove plural */
+    text = text.replace(/s\b/g, '');
+
+    /* Remove accents */
+    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    /* Remove everything behind '@' */
+    text = text.replace(/\s*@.*/, '');
+
+    /* Remove all chars that are not letters */
+    text = text.replace(/[^a-z0-9 ]+/g, '');
+
+    return text;
+}
+
+
+function Track(_type, _name, _crew, _serious, _fun, _rally) {
+    this._type = _type;
+    this._name = _name;
+    this._Crew = _Crew.length > 1;
+    this._serious = _serious.length > 1;
+    this._fun = _fun.length > 1;
+    this._fivem = _fivem.length > 1;
+
+    this.toString = function () {
+        var platforms = [];
+        if (this._crew) {
+            platforms.push('Crew');
+        }
+        if (this._serious) {
+            platforms.push('Serious');
+        }
+        if (this._fun) {
+            platforms.push('Fun');
+        }
+        if (this._rally) {
+            platforms.push('Rally');
+        }
+        
+        return _type + ' ▸ ' + _name + ' (' + platforms.join(', ') + ')';
+    };
+    
+    this.matches = function (query) {
+        return this._crew && /\bcrew\b/.test(query)
+                || this._serious && /\bserious\b/.test(query)
+                || this._fun && /\bfun\b/.test(query)
+                || this._rally && /\brally\b/.test(query);
+    }
+}
