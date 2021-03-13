@@ -20,7 +20,7 @@ function track(query = '', trackname = {}, tracklink = {}) {
         const track = names[i];
         const link = links[i];
         
-        return track +' - '+link;
+        return track + ' - ' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
