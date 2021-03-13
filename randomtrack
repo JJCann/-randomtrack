@@ -7,9 +7,9 @@ function track(query = '', track_name = {}, track_link = {}) {
 
     /* Find all tracks that match the specified track type */
     const [trackname] = parse_query(query);
-    const names = data[trackname];
+    const names = track_name[trackname];
     const [tracklink] = parse_query(query);
-    const links = data[tracklink];
+    const links = track_link[tracklink];
     if (names !== Object(names)) {
         return 'Usage: !randomtrack (Crew | Serious | Fun | Rally)';
     }
