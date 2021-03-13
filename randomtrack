@@ -17,7 +17,7 @@ function track(query = '', data = {}) {
     if (tracks.length > 0) {
         const i = Math.floor(Math.random() * tracks.length);
         const track = tracks[i];
-        return 'Random Track: ' + track;
+        return track;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
