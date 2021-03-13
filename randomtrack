@@ -10,7 +10,7 @@ function track(query = '', data = {}) {
     const tracks = data[trackname];
     if (tracks !== Object(tracks)) {
         return 'Usage: !randomtrack (Crew | Serious | Fun | Rally)';
-    }
+    }}
 
 function link(query = '', data = {}) {
     query = normalize(query);
@@ -29,7 +29,7 @@ function link(query = '', data = {}) {
         return track +' - '+link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
-}}
+}
 
 function normalize(text) {
     if (!text) {
