@@ -19,7 +19,6 @@ function link(query = '', data = {}) {
     const [tracklink] = parse_query(query);
     const links = data[tracklink];
    
-  }
  
     /* Output a random track (or error message) */
     if (tracks.length > 0) {
@@ -30,7 +29,7 @@ function link(query = '', data = {}) {
         return track +' - '+link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
-}
+}}
 
 function normalize(text) {
     if (!text) {
