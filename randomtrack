@@ -10,7 +10,7 @@ function track(query = '', trackname = {}, tracklink = {}) {
     const names = data[trackname];
     const [tracklink] = parse_query(query);
     const links = data[tracklink];
-    if (tracks !== Object(tracks)) {
+    if (names !== Object(names)) {
         return 'Usage: !randomtrack (Crew | Serious | Fun | Rally)';
     }
  
