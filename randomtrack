@@ -15,7 +15,7 @@ function track(query = '', data = {}) {
 function link(query = '', data = {}) {
     query = normalize(query);
 
-    /* Find all tracks that match the specified track type */
+    /* Find all track links that match the specified track type */
     const [tracklink] = parse_query(query);
     const links = data[tracklink];
    
