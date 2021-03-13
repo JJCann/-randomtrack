@@ -5,11 +5,11 @@
 function track(query = '', data = {}) {
     query = normalize(query);
 
-    /* Find all tracks that match the specified platform */
-    const [platform, category] = parse_query(query);
-    const tracks = data[platform];
+    /* Find all tracks that match the specified track type */
+    const [tracktype category] = parse_query(query);
+    const tracks = data[tracktype];
     if (tracks !== Object(tracks)) {
-        return 'Usage: !randomtrack (PS4 | XB1 | PC | 5M) (<category>)';
+        return 'Usage: !randomtrack (Crew | Serious | Fun | Rally) (<category>)';
     }
 
     /* Find all tracks that match the specified category */
