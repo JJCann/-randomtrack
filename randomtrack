@@ -2,27 +2,26 @@
  * Nightbot command:
  * !editcom -ul=everyone -cd=5 !randomtrack $(eval track('$(provider)', '$(query)', "$(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv)"); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/main/randomtrack);)
 */ 
-function track(provider='', query = '', data = '') {
+function track(query = '', data = {}) {
     query = normalize(query);
 
-    var rows = data.split('<EOL>');
-    var tracks = [];
-    var type = 'unknown';
-    for (var i = 0; i < rows.length; i++) {
-        var row = rows[i].trim();
-        var cols = row.split('\t');
-
-        if (cols.length === 1) {
-            type = cols[0];
-        } else if (cols.length === 5) {
-            tracks.push(new Track(type, cols[0], cols[1], cols[2], cols[3], cols[4]));
-        }
+    /* Find all tracks that match the specified platform */
+    const [platform, category] = parse_query(query);
+    const tracks = data[platform];
+    if (tracks !== Object(tracks)) {
+        return 'Usage: !randomtrack (PS4 | XB1 | PC | 5M) (<category>)';
     }
-    
-    /* Find all tracks that match the specified criteria */
-    var matching_tracks = tracks.filter(function (track) {
-        return track.matches(query);
-    });
+
+    /* Find all tracks that match the specified category */
+    const matching_tracks = [];
+    for (var track_category in tracks) {
+        if (category !== '' && normalize(track_category).indexOf(category) === -1) {
+            continue;
+        }
+        Array.prototype.push.apply(matching_tracks, tracks[track_category].map(function(track_name) {
+            return track_category + ' ▸ ' + track_name;
+        }));
+    };
     
     
     /* Output a random track (or error message) */
