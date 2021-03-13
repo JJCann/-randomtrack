@@ -11,7 +11,7 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'Usage: !randomtrack (JAZZ | Serious | Fun | Rally)';
+        return 'To use this command, write !randomtrack, then a space, then either jazz, serious, fun or rally';
     }
  
     /* Output a random track (or error message) */
