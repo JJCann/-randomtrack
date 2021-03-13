@@ -1,23 +1,33 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !randomtrack $(eval track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrack);)
+ * !editcom -ul=everyone -cd=5 !randomtrack $(eval track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv)); $(eval link('$(query)' $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrack);)
 */
 function track(query = '', data = {}) {
     query = normalize(query);
 
     /* Find all tracks that match the specified track type */
-    const [tracktype] = parse_query(query);
-    const tracks = data[tracktype];
+    const [trackname] = parse_query(query);
+    const tracks = data[trackname];
     if (tracks !== Object(tracks)) {
         return 'Usage: !randomtrack (Crew | Serious | Fun | Rally)';
     }
 
+function link(query = '', data = {}) {
+    query = normalize(query);
+
+    /* Find all tracks that match the specified track type */
+    const [tracklink] = parse_query(query);
+    const links = data[tracklink];
+   
+  }
  
     /* Output a random track (or error message) */
     if (tracks.length > 0) {
         const i = Math.floor(Math.random() * tracks.length);
         const track = tracks[i];
-        return track;
+        const link = links[i];
+        
+        return track +' - '+link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
