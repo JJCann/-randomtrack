@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !randomgroup $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1xuaX59UY1SPX6-l5qE5V7aHXudkz35DMEKVCmPZo9AY/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomgroup
+ * !editcom -ul=everyone -cd=5 !randomgroup $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1xuaX59UY1SPX6-l5qE5V7aHXudkz35DMEKVCmPZo9AY/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomgroup);)
 */
 function group(query = '', data = {}) {
     query = normalize(query);
