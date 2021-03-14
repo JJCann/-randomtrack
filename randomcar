@@ -81,8 +81,8 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bcompact\b/g, '');
     if (query_before !== query_after) return ['Compact', query_after.trim()];
 
-    query_after = query_before.replace(/\brally\b/g, '');
-    if (query_before !== query_after) return ['Rally', query_after.trim()];
+    query_after = query_before.replace(/\bvan\b/g, '');
+    if (query_before !== query_after) return ['Van', query_after.trim()];
 
     query_after = query_before.replace(/\bsedan\b/g, '');
     if (query_before !== query_after) return ['Sedan', query_after.trim()];
