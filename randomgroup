@@ -92,4 +92,3 @@ function parse_query(query_before='') {
     
     return ['', query_before];
 }
-© 2021 GitHub, Inc.
