@@ -1,24 +1,39 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !randomtrack $(eval parsequery('$(response), number)'; track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrack);)
+ * !editcom -ul=everyone -cd=5 !randomtrack $(eval playlist('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrack);)
 */
+function playlist(query, track_name, track_link) {
+    query = normalize(query);
 
-function track(query1 = '', query2='') {
-var response = '';
-var number = '';
+    const tracks = []
+    const args = query.split(' ');
 
-/*get response & number*/
-  for (var i=0; i<parseInt(number); i++) {
-    response += track(response);
+    while (args.length > 0) {
+        const arg1 = args.shift(); /* track type */
+        const arg2 = args.shift(); /* optional amount */
+
+        if (arg2 === undefined) {
+            tracks.push(track(arg1, track_name, track_link));
+        } else {
+            const amount = parseInt(arg2);
+            if (isNaN(amount)) {
+                args.unshift(arg2); /* restore the 2nd argument, if it is not a number */
+            } else {
+                for (var i = 0; i < amount; i++) {
+                    tracks.push(track(arg1, track_name, track_link));
+                }
+            }
+        }
+    }
+
+    if (tracks.length > 0) {
+        return tracks.join('\n');
+    }
+
+    return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
 
-???
-
-
-
-
-
-function track(query = '', track_name = {}, track_link = {}) {
+function track(query, track_name, track_link) {
     query = normalize(query);
 
     /* Find all tracks that match the specified track type */
@@ -27,15 +42,15 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write !randomtrack, then a space, then either jazz, serious, fun or rally. For anything more specific, checkout the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
+        return 'To use this command, write `!randomtrack`, then a space, then either `jazz`, `serious`, `fun` or `rally`. For anything more specific, checkout the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
     }
- 
+
     /* Output a random track (or error message) */
     if (names.length > 0) {
         const i = Math.floor(Math.random() * names.length);
         const track = names[i];
         const link = links[i];
-        
+
         return track + ' - ' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
@@ -61,10 +76,13 @@ function normalize(text) {
     /* Remove all chars that are not letters */
     text = text.replace(/[^a-z0-9 ]+/g, '');
 
-    return text;      
+    /* Condense whitespace */
+    text = text.replace(/\s+/g, ' ');
+
+    return text.trim();
 }
 
-function parse_query(query_before='') {
+function parse_query(query_before = '') {
     var query_after = '';
 
     query_after = query_before.replace(/\bjazz\b/g, '');
