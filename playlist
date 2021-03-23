@@ -27,7 +27,7 @@ function playlist(query, track_name, track_link) {
     }
 
     if (tracks.length > 0) {
-        return tracks.join('\n');
+        return tracks.join(' ');
     }
 
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
@@ -51,7 +51,7 @@ function track(query, track_name, track_link) {
         const track = names[i];
         const link = links[i];
 
-        return track + ' - ' + link + ' ';
+        return track + ' - ' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
