@@ -27,7 +27,7 @@ function playlist(query, track_name, track_link) {
     }
 
     if (tracks.length > 0) {
-        return tracks.join(' ');
+        return truncate(tracks.join(' '));
     }
 
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
@@ -98,4 +98,11 @@ function parse_query(query_before = '') {
     if (query_before !== query_after) return ['Rally', query_after.trim()];
 
     return ['', query_before];
+}
+
+function truncate(text) {
+    if (text.length > 400) {
+        return text.substring(0, 399) + '…';
+    }
+    return text;
 }
