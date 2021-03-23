@@ -5,7 +5,7 @@
 function playlist(query, track_name, track_link) {
     query = normalize(query);
 
-    const tracks = []
+    const tracks = [];
     const args = query.split(' ');
 
     while (args.length > 0) {
