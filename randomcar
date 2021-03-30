@@ -89,6 +89,8 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\bsuv\b/g, '');
     if (query_before !== query_after) return ['SUV', query_after.trim()];
-    
+
+ query_after = query_before.replace(/\bmeme\b/g, '');
+    if (query_before !== query_after) return ['Meme', query_after.trim()];
     return ['', query_before];
 }
