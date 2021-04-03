@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !randomgroup, then a space, then the class (single, not plural) you want (including all or multi)'
+        return 'To use this command, write !randomgroup, then a space, then the class you want (single, not plural, including all or multi)'
     }
  
     /* Output a random group (or error message) */
