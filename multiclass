@@ -1,0 +1,196 @@
+
+ * Nightbot command:
+ * !editcom -ul=everyone -cd=5 !multiclass $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1JiZmsmPrGZPezpK8XUPFzG9PNjTZHyUTPFTL1wiTjJE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/multiclass);)
+*/
+function group(query = '', data = {}) {
+    query = normalize(query);
+
+    /* Find all car that match the specified track type */
+    const [groupname] = parse_query(query);
+    const groups = data[groupname];
+    if (groups !== Object(groups)) {
+        return 'To use this command, write !supers, then a space, then the tier you want (S - F)'
+    }
+ 
+    /* Output a random group (or error message) */
+    if (groups.length > 0) {
+        const i = Math.floor(Math.random() * groups.length);
+        const group = groups[i];
+        
+        return group;
+    }
+    return 'Could not find a matching random group ¯\\_(ツ)_/¯';
+}
+
+function normalize(text) {
+    if (!text) {
+        text = '';
+    }
+
+    /* Convert to lowercase */
+    text = text.toLowerCase();
+
+    /* Remove plural (unless part of 'PS 4')*/
+    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
+
+    /* Remove accents */
+    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    /* Remove everything behind '@' */
+    text = text.replace(/\s*@.*/, '');
+
+    /* Remove all chars that are not letters */
+    text = text.replace(/[^a-z0-9 ]+/g, '');
+
+    return text;
+}
+
+function parse_query(query_before='') {
+    var query_after = '';
+
+    query_after = query_before.replace(/\b1\b/g, '');
+    if (query_before !== query_after) return ['1', query_after.trim()];
+
+    query_after = query_before.replace(/\b2\b/g, '');
+    if (query_before !== query_after) return ['2', query_after.trim()];
+
+    query_after = query_before.replace(/\b3\b/g, '');
+    if (query_before !== query_after) return ['3', query_after.trim()];
+
+    query_after = query_before.replace(/\b4\b/g, '');
+    if (query_before !== query_after) return ['4', query_after.trim()];
+
+    query_after = query_before.replace(/\b5\b/g, '');
+    if (query_before !== query_after) return ['5', query_after.trim()];
+
+    query_after = query_before.replace(/\b6\b/g, '');
+    if (query_before !== query_after) return ['6', query_after.trim()];
+
+    query_after = query_before.replace(/\b7\b/g, '');
+    if (query_before !== query_after) return ['7', query_after.trim()];
+    
+    query_after = query_before.replace(/\b8\b/g, '');
+    if (query_before !== query_after) return ['8', query_after.trim()];
+    
+    query_after = query_before.replace(/\b9\b/g, '');
+    if (query_before !== query_after) return ['9', query_after.trim()];
+    
+    query_after = query_before.replace(/\b10\b/g, '');
+    if (query_before !== query_after) return ['10', query_after.trim()];
+    
+    query_after = query_before.replace(/\b11\b/g, '');
+    if (query_before !== query_after) return ['11', query_after.trim()];
+
+    query_after = query_before.replace(/\b12\b/g, '');
+    if (query_before !== query_after) return ['12', query_after.trim()];
+
+    query_after = query_before.replace(/\b13\b/g, '');
+    if (query_before !== query_after) return ['13', query_after.trim()];
+
+    query_after = query_before.replace(/\b14\b/g, '');
+    if (query_before !== query_after) return ['14', query_after.trim()];
+
+    query_after = query_before.replace(/\b15\b/g, '');
+    if (query_before !== query_after) return ['15', query_after.trim()];
+
+    query_after = query_before.replace(/\b16\b/g, '');
+    if (query_before !== query_after) return ['16', query_after.trim()];
+
+    query_after = query_before.replace(/\b17\b/g, '');
+    if (query_before !== query_after) return ['17', query_after.trim()];
+    
+    query_after = query_before.replace(/\b18\b/g, '');
+    if (query_before !== query_after) return ['18', query_after.trim()];
+    
+    query_after = query_before.replace(/\b19\b/g, '');
+    if (query_before !== query_after) return ['19', query_after.trim()];
+    
+    query_after = query_before.replace(/\b20\b/g, '');
+    if (query_before !== query_after) return ['20', query_after.trim()];
+    
+    query_after = query_before.replace(/\b21\b/g, '');
+    if (query_before !== query_after) return ['21', query_after.trim()];
+
+    query_after = query_before.replace(/\b22\b/g, '');
+    if (query_before !== query_after) return ['22', query_after.trim()];
+
+    query_after = query_before.replace(/\b23\b/g, '');
+    if (query_before !== query_after) return ['23', query_after.trim()];
+
+    query_after = query_before.replace(/\b24\b/g, '');
+    if (query_before !== query_after) return ['24', query_after.trim()];
+
+    query_after = query_before.replace(/\b25\b/g, '');
+    if (query_before !== query_after) return ['25', query_after.trim()];
+
+    query_after = query_before.replace(/\b26\b/g, '');
+    if (query_before !== query_after) return ['26', query_after.trim()];
+
+    query_after = query_before.replace(/\b27\b/g, '');
+    if (query_before !== query_after) return ['27', query_after.trim()];
+    
+    query_after = query_before.replace(/\b28\b/g, '');
+    if (query_before !== query_after) return ['28', query_after.trim()];
+    
+    query_after = query_before.replace(/\b29\b/g, '');
+    if (query_before !== query_after) return ['29', query_after.trim()];
+    
+    query_after = query_before.replace(/\b30\b/g, '');
+    if (query_before !== query_after) return ['30', query_after.trim()];
+    
+    query_after = query_before.replace(/\b31\b/g, '');
+    if (query_before !== query_after) return ['31', query_after.trim()];
+
+    query_after = query_before.replace(/\b32\b/g, '');
+    if (query_before !== query_after) return ['32', query_after.trim()];
+
+    query_after = query_before.replace(/\b33\b/g, '');
+    if (query_before !== query_after) return ['33', query_after.trim()];
+
+    query_after = query_before.replace(/\b34\b/g, '');
+    if (query_before !== query_after) return ['34', query_after.trim()];
+
+    query_after = query_before.replace(/\b35\b/g, '');
+    if (query_before !== query_after) return ['35', query_after.trim()];
+
+    query_after = query_before.replace(/\b36\b/g, '');
+    if (query_before !== query_after) return ['36', query_after.trim()];
+
+    query_after = query_before.replace(/\b37\b/g, '');
+    if (query_before !== query_after) return ['37', query_after.trim()];
+    
+    query_after = query_before.replace(/\b38\b/g, '');
+    if (query_before !== query_after) return ['38', query_after.trim()];
+    
+    query_after = query_before.replace(/\b39\b/g, '');
+    if (query_before !== query_after) return ['39', query_after.trim()];
+    
+    query_after = query_before.replace(/\b40\b/g, '');
+    if (query_before !== query_after) return ['40', query_after.trim()];
+    
+    query_after = query_before.replace(/\b41\b/g, '');
+    if (query_before !== query_after) return ['41', query_after.trim()];
+
+    query_after = query_before.replace(/\b42\b/g, '');
+    if (query_before !== query_after) return ['42', query_after.trim()];
+
+    query_after = query_before.replace(/\b43\b/g, '');
+    if (query_before !== query_after) return ['43', query_after.trim()];
+
+    query_after = query_before.replace(/\b44\b/g, '');
+    if (query_before !== query_after) return ['44', query_after.trim()];
+
+    query_after = query_before.replace(/\b45\b/g, '');
+    if (query_before !== query_after) return ['45', query_after.trim()];
+
+    query_after = query_before.replace(/\b46\b/g, '');
+    if (query_before !== query_after) return ['46', query_after.trim()];
+
+    query_after = query_before.replace(/\b47\b/g, '');
+    if (query_before !== query_after) return ['47', query_after.trim()];
+    
+    query_after = query_before.replace(/\b48\b/g, '');
+    if (query_before !== query_after) return ['48', query_after.trim()];
+    
+    return ['', query_before];
+}
