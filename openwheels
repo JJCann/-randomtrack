@@ -1,4 +1,4 @@
-
+/*
  * Nightbot command:
  * !editcom -ul=everyone -cd=5 !openwheels $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1T2tiXXmefkFdhZgdfAtTGLxDDZuyyHKqD2ACY2zUbDE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/openwheels);)
 */
