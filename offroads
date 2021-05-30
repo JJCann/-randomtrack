@@ -1,0 +1,76 @@
+/*
+ * Nightbot command:
+ * !editcom -ul=everyone -cd=5 !offroads $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1mjot4T7IoXJHJzpeXIl7w-c6mzgnJtTcPeYS7kT621g/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/offroads);)
+*/
+function group(query = '', data = {}) {
+    query = normalize(query);
+
+    /* Find all car that match the specified track type */
+    const [groupname] = parse_query(query);
+    const groups = data[groupname];
+    if (groups !== Object(groups)) {
+        return 'To use this command, write !supers, then a space, then the tier you want (S - F)'
+    }
+ 
+    /* Output a random group (or error message) */
+    if (groups.length > 0) {
+        const i = Math.floor(Math.random() * groups.length);
+        const group = groups[i];
+        
+        return group;
+    }
+    return 'Could not find a matching random group ¯\\_(ツ)_/¯';
+}
+
+function normalize(text) {
+    if (!text) {
+        text = '';
+    }
+
+    /* Convert to lowercase */
+    text = text.toLowerCase();
+
+    /* Remove plural (unless part of 'PS 4')*/
+    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
+
+    /* Remove accents */
+    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    /* Remove everything behind '@' */
+    text = text.replace(/\s*@.*/, '');
+
+    /* Remove all chars that are not letters */
+    text = text.replace(/[^a-z0-9 ]+/g, '');
+
+    return text;
+}
+
+function parse_query(query_before='') {
+    var query_after = '';
+
+    query_after = query_before.replace(/\bs\b/g, '');
+    if (query_before !== query_after) return ['S', query_after.trim()];
+
+    query_after = query_before.replace(/\ba\b/g, '');
+    if (query_before !== query_after) return ['A', query_after.trim()];
+
+    query_after = query_before.replace(/\bb\b/g, '');
+    if (query_before !== query_after) return ['B', query_after.trim()];
+
+    query_after = query_before.replace(/\bc\b/g, '');
+    if (query_before !== query_after) return ['C', query_after.trim()];
+
+    query_after = query_before.replace(/\bd\b/g, '');
+    if (query_before !== query_after) return ['D', query_after.trim()];
+
+    query_after = query_before.replace(/\be\b/g, '');
+    if (query_before !== query_after) return ['E', query_after.trim()];
+
+    query_after = query_before.replace(/\bf\b/g, '');
+    if (query_before !== query_after) return ['F', query_after.trim()];
+    
+    query_after = query_before.replace(/\bg\b/g, '');
+    if (query_before !== query_after) return ['G', query_after.trim()];
+   
+   return ['', query_before];
+}
