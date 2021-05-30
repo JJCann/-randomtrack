@@ -1,4 +1,4 @@
-
+/*
  * Nightbot command:
  * !editcom -ul=everyone -cd=5 !vans $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1SVk3rkpy07ClRLNsNUZg_zRra4d3ouR22kFDjwZSSRs/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/vans);)
 */
