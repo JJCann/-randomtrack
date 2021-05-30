@@ -1,4 +1,4 @@
-
+/*
  * Nightbot command:
  * !editcom -ul=everyone -cd=5 !specials $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1Bd455IlVW2Wd78GQi7cGQNUsZut6taUY5gWnCMSibc4/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/specials);)
 */
