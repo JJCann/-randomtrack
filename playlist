@@ -42,7 +42,7 @@ function track(query, track_name, track_link) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!randomtrack`, then a space, then either `jazz`, `serious`, `fun` or `rally`. For anything more specific, checkout the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
+        return 'To use this command, write `!playlist`, then a space, then either `jazz`, `serious`, `fun` or `rally`, then the number of those tracks you want. For anything more specific, checkout the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
     }
 
     /* Output a random track (or error message) */
