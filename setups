@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !setups $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1JB6lfIutxmaNJcUB48ReIj0OZ4YxWpR6b6M0qKgCecc/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/setups);)
+ * !editcom -ul=everyone -cd=5 !setup $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1JB6lfIutxmaNJcUB48ReIj0OZ4YxWpR6b6M0qKgCecc/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/setups);)
 */
 function car(query = '', data = {}) {
     query = normalize(query);
@@ -8,8 +8,8 @@ function car(query = '', data = {}) {
     /* Find all car that match the specified track type */
     const [carname] = parse_query(query);
     const cars = data[carname];
-    if (cars !== Object(groups)) {
-        return 'To use this command, write !setups, then a space, then the car you want'
+    if (cars !== Object(cars)) {
+        return 'To use this command, write !setup, then a space, then the car you want'
     }
  
     /* Output a random group (or error message) */
