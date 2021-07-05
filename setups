@@ -17,7 +17,7 @@ function group(query = '', data = {}) {
         const i = Math.floor(Math.random() * groups.length);
         const group = groups[i];
         
-        return group + '    This is a basic setup. You will need to do your own testing to refine this, and this is only a starting point!';
+        return group;
     }
     return 'Could not find a matching car ¯\\_(ツ)_/¯';
 }
@@ -60,10 +60,10 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\b9f\b/g, '');
     if (query_before !== query_after) return ['9F', query_after.trim()];
 
-    query_after = query_before.replace(/\bAdder\b/g, '');
+    query_after = query_before.replace(/\badder\b/g, '');
     if (query_before !== query_after) return ['Adder', query_after.trim()];
 
-    query_after = query_before.replace(/\bAlpha\b/g, '');
+    query_after = query_before.replace(/\balpha\b/g, '');
     if (query_before !== query_after) return ['Alpha', query_after.trim()];
 
     query_after = query_before.replace(/\basbo\b/g, '');
@@ -270,13 +270,13 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bdriftyosemite\b/g, '');
     if (query_before !== query_after) return ['Drift Yosemite', query_after.trim()];
 
-    query_after = query_before.replace(/\bdusta\b/g, '');
+    query_after = query_before.replace(/\bdubsta\b/g, '');
     if (query_before !== query_after) return ['Dubsta', query_after.trim()];
 
-    query_after = query_before.replace(/\bdusta2\b/g, '');
+    query_after = query_before.replace(/\bdubsta2\b/g, '');
     if (query_before !== query_after) return ['Dubsta 2', query_after.trim()];
 
-    query_after = query_before.replace(/\bdusta6x6\b/g, '');
+    query_after = query_before.replace(/\bdubsta6x6\b/g, '');
     if (query_before !== query_after) return ['Dubsta 6x6', query_after.trim()];
 
      query_after = query_before.replace(/\bdukeodeath\b/g, '');
