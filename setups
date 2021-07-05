@@ -9,7 +9,7 @@ function car(query = '', data = {}) {
     const [carname] = parse_query(query);
     const cars = data[carname];
     if (cars !== Object(cars)) {
-        return 'To use this command, write !setup, then a space, then the car you want'
+        return 'To use this command, write !setup, then a space, then the car you want (no spaces)'
     }
  
     /* Output a random group (or error message) */
@@ -17,7 +17,9 @@ function car(query = '', data = {}) {
         const i = Math.floor(Math.random() * cars.length);
         const car = cars[i];
         
-        return car
+        return car + "
+        
+        This is JJ's setup, and may not suit you. This is just a guide for starters! Do your own testing!"
     }
     return 'Could not find a matching random group ¯\\_(ツ)_/¯';
 }
