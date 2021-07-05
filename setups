@@ -870,7 +870,7 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bstreetblazer\b/g, '');
     if (query_before !== query_after) return ['Street Blazer', query_after.trim()];
     
-    query_after = query_before.replace(/\streiter\b/g, '');
+    query_after = query_before.replace(/\bstreiter\b/g, '');
     if (query_before !== query_after) return ['Streiter', query_after.trim()];
     
     query_after = query_before.replace(/\bstromberg\b/g, '');
