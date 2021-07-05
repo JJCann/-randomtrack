@@ -19,7 +19,7 @@ function group(query = '', data = {}) {
         
         return group '    This is a basic setup. You will need to do your own testing to refine this, and this is only a starting point!';
     }
-    return 'Could not find a matching random group ¯\\_(ツ)_/¯';
+    return 'Could not find a matching car ¯\\_(ツ)_/¯';
 }
 
 function normalize(text) {
