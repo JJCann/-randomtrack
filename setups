@@ -13,9 +13,9 @@ function car(query = '', data = {}) {
     }
  
     /* Output a random group (or error message) */
-    if (groups.length > 0) {
+    if (cars.length > 0) {
         const i = Math.floor(Math.random() * cars.length);
-        const group = cars[i];
+        const car = cars[i];
         
         return car
     }
