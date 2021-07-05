@@ -358,7 +358,7 @@ function parse_query(query_before='') {
     if (query_before !== query_after) return ['FQ2', query_after.trim()];
     
     query_after = query_before.replace(/\bfrankenstange\b/g, '');
-    if (query_before !== query_after) return ['Franken STange', query_after.trim()];
+    if (query_before !== query_after) return ['Franken Stange', query_after.trim()];
     
         query_after = query_before.replace(/\bfreecrawler\b/g, '');
     if (query_before !== query_after) return ['Freecrawler', query_after.trim()];
