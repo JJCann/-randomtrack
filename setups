@@ -17,7 +17,7 @@ function group(query = '', data = {}) {
         const i = Math.floor(Math.random() * groups.length);
         const group = groups[i];
         
-        return group "    This is a basic setup. You will need to do your own testing to refine this, and this is only a starting point!";
+        return group '    This is a basic setup. You will need to do your own testing to refine this, and this is only a starting point!';
     }
     return 'Could not find a matching random group ¯\\_(ツ)_/¯';
 }
