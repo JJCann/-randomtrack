@@ -17,9 +17,7 @@ function car(query = '', data = {}) {
         const i = Math.floor(Math.random() * cars.length);
         const car = cars[i];
         
-        return car + "
-        
-        This is JJ's setup, and may not suit you. This is just a guide for starters! Do your own testing!"
+        return car + "        This is JJ's setup, and may not suit you. This is just a guide for starters! Do your own testing!"
     }
     return 'Could not find a matching random group ¯\\_(ツ)_/¯';
 }
