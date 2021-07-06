@@ -1078,7 +1078,7 @@ function parse_query(query_before='') {
     if (query_before !== query_after) return ['Youga Classic', query_after.trim()];
     
        query_after = query_before.replace(/\bztype\b/g, '');
-    if (query_before !== query_after) return ['Z type', query_after.trim()];
+    if (query_before !== query_after) return ['Z Type', query_after.trim()];
     
     query_after = query_before.replace(/\bzentorno\b/g, '');
     if (query_before !== query_after) return ['Zentorno', query_after.trim()];
