@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !setup, then a space, then the car you want (no spaces or special characters in car name)';
+        return 'To use this command, write !setup, then a space, then the car you want (no spaces or special characters in car name). For full list of cars, check the list here - https://tinyurl.com/tea3fvu7';
     }
  
     /* Output a random group (or error message) */
@@ -17,7 +17,7 @@ function group(query = '', data = {}) {
         const i = Math.floor(Math.random() * groups.length);
         const group = groups[i];
         
-        return group;
+        return group + 'This is a basic setup to start with. You will need to do your own testing to refine this!';
     }
     return 'Could not find a matching car ¯\\_(ツ)_/¯';
 }
