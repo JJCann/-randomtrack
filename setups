@@ -632,9 +632,6 @@ function parse_query(query_before='') {
     
     query_after = query_before.replace(/\bpatriotstretch\b/g, '');
     if (query_before !== query_after) return ['Patriot Stretch', query_after.trim()];
-    
-        query_after = query_before.replace(/\bdeluxo\b/g, '');
-    if (query_before !== query_after) return ['Deluxo', query_after.trim()];
 
     query_after = query_before.replace(/\bpenetrator\b/g, '');
     if (query_before !== query_after) return ['Penetrator', query_after.trim()];
