@@ -1002,7 +1002,7 @@ function parse_query(query_before='') {
      query_after = query_before.replace(/\bvetomodern\b/g, '');
     if (query_before !== query_after) return ['Veto Modern', query_after.trim()];
     
-        query_after = query_before.replace(/\bigero\b/g, '');
+        query_after = query_before.replace(/\bvigero\b/g, '');
     if (query_before !== query_after) return ['Vigero', query_after.trim()];
 
        query_after = query_before.replace(/\bvigilante\b/g, '');
