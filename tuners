@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !supers, then a space, then the tier you want (S - F)'
+        return 'To use this command, write !tuners, then a space, then the tier you want (S - F)'
     }
  
     /* Output a random group (or error message) */
