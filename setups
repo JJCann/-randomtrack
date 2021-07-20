@@ -165,6 +165,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bburgershotstallion\b/g, '');
     if (query_before !== query_after) return ['Burgershot Stallion', query_after.trim()];
     
+query_after = query_before.replace(/\bcalicogtf\b/g, '');
+    if (query_before !== query_after) return ['Calico GTF', query_after.trim()];
+    
     query_after = query_before.replace(/\bcaracara4x4\b/g, '');
     if (query_before !== query_after) return ['Caracara 4x4', query_after.trim()];
     
@@ -213,6 +216,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bcometretrocustom\b/g, '');
     if (query_before !== query_after) return ['Comet Retro Custom', query_after.trim()];
     
+    query_after = query_before.replace(/\bcomets2\b/g, '');
+    if (query_before !== query_after) return ['Comet S2', query_after.trim()];
+    
     query_after = query_before.replace(/\bcometsafari\b/g, '');
     if (query_before !== query_after) return ['Comet Safari', query_after.trim()];
     
@@ -240,6 +246,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bcyclone\b/g, '');
     if (query_before !== query_after) return ['Cyclone', query_after.trim()];
     
+    query_after = query_before.replace(/\bcypher\b/g, '');
+    if (query_before !== query_after) return ['Cypher', query_after.trim()];
+    
         query_after = query_before.replace(/\bdeluxo\b/g, '');
     if (query_before !== query_after) return ['Deluxo', query_after.trim()];
 
@@ -258,6 +267,12 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bdominator\b/g, '');
     if (query_before !== query_after) return ['Dominator', query_after.trim()];
 
+    query_after = query_before.replace(/\bdominatorasp\b/g, '');
+    if (query_before !== query_after) return ['Dominator ASP', query_after.trim()];
+    
+    query_after = query_before.replace(/\bdominatorgtt\b/g, '');
+    if (query_before !== query_after) return ['Dominator GTT', query_after.trim()];
+    
     query_after = query_before.replace(/\bdominatorgtx\b/g, '');
     if (query_before !== query_after) return ['Dominator GTX', query_after.trim()];
     
@@ -321,6 +336,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\beveron\b/g, '');
     if (query_before !== query_after) return ['Everon', query_after.trim()];
 
+    query_after = query_before.replace(/\beuros\b/g, '');
+    if (query_before !== query_after) return ['Euros', query_after.trim()];
+    
     query_after = query_before.replace(/\bexemplar\b/g, '');
     if (query_before !== query_after) return ['Exemplar', query_after.trim()];
 
@@ -378,7 +396,10 @@ function parse_query(query_before='') {
      query_after = query_before.replace(/\bfuto\b/g, '');
     if (query_before !== query_after) return ['Futo', query_after.trim()];
 
-     query_after = query_before.replace(/\bgangburrito\b/g, '');
+    query_after = query_before.replace(/\bfutogtx\b/g, '');
+    if (query_before !== query_after) return ['Futo GTX', query_after.trim()];
+    
+    query_after = query_before.replace(/\bgangburrito\b/g, '');
     if (query_before !== query_after) return ['Gang Burrito', query_after.trim()];
     
     query_after = query_before.replace(/\bgauntlet\b/g, '');
@@ -411,7 +432,10 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bgresley\b/g, '');
     if (query_before !== query_after) return ['Gresley', query_after.trim()];
     
-       query_after = query_before.replace(/\bgt500\b/g, '');
+    query_after = query_before.replace(/\bgrowler\b/g, '');
+    if (query_before !== query_after) return ['Growler', query_after.trim()];
+    
+    query_after = query_before.replace(/\bgt500\b/g, '');
     if (query_before !== query_after) return ['GT500', query_after.trim()];
     
     query_after = query_before.replace(/\bguardian\b/g, '');
@@ -500,6 +524,9 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\bjesterclassic\b/g, '');
     if (query_before !== query_after) return ['Jester Classic', query_after.trim()];
+    
+    query_after = query_before.replace(/\bjesterrr\b/g, '');
+    if (query_before !== query_after) return ['Jester RR', query_after.trim()];
     
     query_after = query_before.replace(/\bjugular\b/g, '');
     if (query_before !== query_after) return ['Jugular', query_after.trim()];
@@ -675,7 +702,10 @@ function parse_query(query_before='') {
      query_after = query_before.replace(/\bpremier\b/g, '');
     if (query_before !== query_after) return ['Premier', query_after.trim()];
 
-     query_after = query_before.replace(/\bprimo\b/g, '');
+     query_after = query_before.replace(/\bprevian\b/g, '');
+    if (query_before !== query_after) return ['Previan', query_after.trim()];
+    
+    query_after = query_before.replace(/\bprimo\b/g, '');
     if (query_before !== query_after) return ['Primo', query_after.trim()];
     
      query_after = query_before.replace(/\bprimocustom\b/g, '');
@@ -723,7 +753,10 @@ function parse_query(query_before='') {
      query_after = query_before.replace(/\bregina\b/g, '');
     if (query_before !== query_after) return ['Regina', query_after.trim()];
 
-     query_after = query_before.replace(/\bretinue\b/g, '');
+    query_after = query_before.replace(/\bremus\b/g, '');
+    if (query_before !== query_after) return ['Remus', query_after.trim()];
+    
+    query_after = query_before.replace(/\bretinue\b/g, '');
     if (query_before !== query_after) return ['Retinue', query_after.trim()];
     
      query_after = query_before.replace(/\bretinuemk2\b/g, '');
@@ -753,7 +786,10 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\brooseveltvalor\b/g, '');
     if (query_before !== query_after) return ['Roosevelt Valor', query_after.trim()];
     
-        query_after = query_before.replace(/\bruiner\b/g, '');
+        query_after = query_before.replace(/\brt3000\b/g, '');
+    if (query_before !== query_after) return ['RT 3000', query_after.trim()];
+    
+    query_after = query_before.replace(/\bruiner\b/g, '');
     if (query_before !== query_after) return ['Ruiner', query_after.trim()];
 
         query_after = query_before.replace(/\bruiner2000\b/g, '');
@@ -897,6 +933,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bsultanrs\b/g, '');
     if (query_before !== query_after) return ['Sultan RS', query_after.trim()];
 
+    query_after = query_before.replace(/\bsultanrsclassic\b/g, '');
+    if (query_before !== query_after) return ['Sultan RS Classic', query_after.trim()];
+    
     query_after = query_before.replace(/\bsuperdiamond\b/g, '');
     if (query_before !== query_after) return ['superdiamond', query_after.trim()];
 
@@ -918,6 +957,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\btailgater\b/g, '');
     if (query_before !== query_after) return ['Tailgater', query_after.trim()];
 
+    query_after = query_before.replace(/\btailgaters\b/g, '');
+    if (query_before !== query_after) return ['Tailgater S', query_after.trim()];
+    
     query_after = query_before.replace(/\btaipan\b/g, '');
     if (query_before !== query_after) return ['Taipan', query_after.trim()];
 
@@ -990,6 +1032,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bvamos\b/g, '');
     if (query_before !== query_after) return ['Vamos', query_after.trim()];
 
+     query_after = query_before.replace(/\bvectre\b/g, '');
+    if (query_before !== query_after) return ['Vectre', query_after.trim()];
+    
     query_after = query_before.replace(/\bverlierer\b/g, '');
     if (query_before !== query_after) return ['Verlierer', query_after.trim()];
 
@@ -1035,6 +1080,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bwarrener\b/g, '');
     if (query_before !== query_after) return ['Warrner', query_after.trim()];
 
+    query_after = query_before.replace(/\bwarrenerhkr\b/g, '');
+    if (query_before !== query_after) return ['Warrner HKR', query_after.trim()];
+    
     query_after = query_before.replace(/\bwashington\b/g, '');
     if (query_before !== query_after) return ['Washington', query_after.trim()];
 
@@ -1092,7 +1140,8 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bzorrusso\b/g, '');
     if (query_before !== query_after) return ['Zorrusso', query_after.trim()];
 
-
+    query_after = query_before.replace(/\bzr350\b/g, '');
+    if (query_before !== query_after) return ['ZR350', query_after.trim()];
    
    return ['', query_before];
 }
