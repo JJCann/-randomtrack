@@ -1078,10 +1078,10 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     if (query_before !== query_after) return ['Voodoo Custom', query_after.trim()];
 
     query_after = query_before.replace(/\bwarrener\b/g, '');
-    if (query_before !== query_after) return ['Warrner', query_after.trim()];
+    if (query_before !== query_after) return ['Warrener', query_after.trim()];
 
     query_after = query_before.replace(/\bwarrenerhkr\b/g, '');
-    if (query_before !== query_after) return ['Warrner HKR', query_after.trim()];
+    if (query_before !== query_after) return ['Warrener HKR', query_after.trim()];
     
     query_after = query_before.replace(/\bwashington\b/g, '');
     if (query_before !== query_after) return ['Washington', query_after.trim()];
