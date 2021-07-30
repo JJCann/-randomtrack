@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !sports, then a space, then the tier you want (S - J)'
+        return 'To use this command, write !sports, then a space, then the tier you want (S - K)'
     }
  
     /* Output a random group (or error message) */
@@ -80,6 +80,9 @@ function parse_query(query_before='') {
     
     query_after = query_before.replace(/\bj\b/g, '');
     if (query_before !== query_after) return ['J', query_after.trim()];
+    
+        query_after = query_before.replace(/\bk\b/g, '');
+    if (query_before !== query_after) return ['K', query_after.trim()];
     
     return ['', query_before];
 }
