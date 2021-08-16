@@ -1098,8 +1098,8 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bwinky\b/g, '');
     if (query_before !== query_after) return ['Winky', query_after.trim()];
     
-    query_after = query_before.replace(/\bx80\b/g, '');
-    if (query_before !== query_after) return ['X80', query_after.trim()];
+    query_after = query_before.replace(/\bx80proto\b/g, '');
+    if (query_before !== query_after) return ['X80 Proto', query_after.trim()];
 
     query_after = query_before.replace(/\bxa21\b/g, '');
     if (query_before !== query_after) return ['XA21', query_after.trim()];
