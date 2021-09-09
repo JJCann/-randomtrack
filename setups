@@ -702,8 +702,8 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
      query_after = query_before.replace(/\bpremier\b/g, '');
     if (query_before !== query_after) return ['Premier', query_after.trim()];
 
-     query_after = query_before.replace(/\bprevian\b/g, '');
-    if (query_before !== query_after) return ['Previan', query_after.trim()];
+     query_after = query_before.replace(/\bprevion\b/g, '');
+    if (query_before !== query_after) return ['Previon', query_after.trim()];
     
     query_after = query_before.replace(/\bprimo\b/g, '');
     if (query_before !== query_after) return ['Primo', query_after.trim()];
