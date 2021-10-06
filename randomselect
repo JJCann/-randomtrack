@@ -53,9 +53,6 @@ function car(query = '', data = {}) {
     return 'Could not find a matching random car ¯\\_(ツ)_/¯';
 }
 
-/*remove last comma*/
-carpl = carpl.replace(/,\s*$/, "");
-
 
 function normalize(text) {
     if (!text) {
@@ -80,6 +77,9 @@ function normalize(text) {
     /* Condense whitespace */
     text = text.replace(/\s+/g, ' ');
 
+    /*remove last comma*/
+    text = text.substring(0, text.length - 1);
+    
     return text.trim();
 }
 
