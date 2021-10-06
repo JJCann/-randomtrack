@@ -1,0 +1,142 @@
+/*
+ * Nightbot command:
+ * !editcom -ul=everyone -cd=5 !randomselect $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1IT3gGl7DmV-STkL-vPrek6T50kzGwql27Fa9hSTQQDE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomselect);)
+*/
+function car(query = '', data = {}) {
+    query = normalize(query);
+
+    const cars = [];
+    const args = query.split(' ');
+
+    while (args.length > 0) {
+        const arg1 = args.shift(); /* car type */
+        const arg2 = args.shift(); /* optional amount */
+
+        if (arg2 === undefined) {
+            cars.push(car(arg1, data));
+        } else {
+            const amount = parseInt(arg2);
+            if (isNaN(amount)) {
+                args.unshift(arg2); /* restore the 2nd argument, if it is not a number */
+            } else {
+                for (var i = 0; i < amount; i++) {
+                    cars.push(car(arg1, data));
+                }
+            }
+        }
+    }
+
+    if (cars.length > 0) {
+        return truncate(cars.join(' '));
+    }
+
+    return 'Could not find a matching random car ¯\\_(ツ)_/¯';
+}
+
+function car(query = '', data = {}) {
+    query = normalize(query);
+
+    /* Find all car that match the specified track type */
+    const [carname] = parse_query(query);
+    const cars = data[carname];
+    if (cars !== Object(cars)) {
+        return 'To use this command, write !randomselect, then a space, then the class you want (single, not plural - including all/rally/meme), then the number of those cars you want'
+    }
+ 
+    /* Output a random car (or error message) */
+    if (cars.length > 0) {
+        const i = Math.floor(Math.random() * cars.length);
+        const car = cars[i];
+        
+        return car;
+    }
+    return 'Could not find a matching random car ¯\\_(ツ)_/¯';
+}
+
+function normalize(text) {
+    if (!text) {
+        text = '';
+    }
+
+    /* Convert to lowercase */
+    text = text.toLowerCase();
+
+    /* Remove plural (unless part of 'PS 4')*/
+    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
+
+    /* Remove accents */
+    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    /* Remove everything behind '@' */
+    text = text.replace(/\s*@.*/, '');
+
+    /* Remove all chars that are not letters */
+    text = text.replace(/[^a-z0-9 ]+/g, '');
+
+    /* Condense whitespace */
+    text = text.replace(/\s+/g, ' ');
+
+    return text.trim();
+}
+
+function parse_query(query_before = '') {
+    var query_after = '';
+
+    query_after = query_before.replace(/\ball\b/g, '');
+    if (query_before !== query_after) return ['All', query_after.trim()];
+
+    query_after = query_before.replace(/\bsuper\b/g, '');
+    if (query_before !== query_after) return ['Super', query_after.trim()];
+
+    query_after = query_before.replace(/\bsport\b/g, '');
+    if (query_before !== query_after) return ['Sport', query_after.trim()];
+
+    query_after = query_before.replace(/\brally\b/g, '');
+    if (query_before !== query_after) return ['Rally', query_after.trim()];
+
+    query_after = query_before.replace(/\bsportsclassic\b/g, '');
+    if (query_before !== query_after) return ['SportsClassic', query_after.trim()];
+
+    query_after = query_before.replace(/\bmuscle\b/g, '');
+    if (query_before !== query_after) return ['Muscle', query_after.trim()];
+
+    query_after = query_before.replace(/\boffroad\b/g, '');
+    if (query_before !== query_after) return ['Offroad', query_after.trim()];
+
+    query_after = query_before.replace(/\bcoupe\b/g, '');
+    if (query_before !== query_after) return ['Coupe', query_after.trim()];
+    
+    query_after = query_before.replace(/\bopenwheel\b/g, '');
+    if (query_before !== query_after) return ['OpenWheel', query_after.trim()];
+
+    query_after = query_before.replace(/\bspecial\b/g, '');
+    if (query_before !== query_after) return ['Special', query_after.trim()];
+
+    query_after = query_before.replace(/\bcompact\b/g, '');
+    if (query_before !== query_after) return ['Compact', query_after.trim()];
+
+    query_after = query_before.replace(/\bvan\b/g, '');
+    if (query_before !== query_after) return ['Van', query_after.trim()];
+
+    query_after = query_before.replace(/\bsedan\b/g, '');
+    if (query_before !== query_after) return ['Sedan', query_after.trim()];
+
+    query_after = query_before.replace(/\bsuv\b/g, '');
+    if (query_before !== query_after) return ['SUV', query_after.trim()];
+
+    query_after = query_before.replace(/\bmeme\b/g, '');
+    if (query_before !== query_after) return ['Meme', query_after.trim()];
+    
+     query_after = query_before.replace(/\btuner\b/g, '');
+    if (query_before !== query_after) return ['Tuner', query_after.trim()];
+    
+
+    return ['', query_before];
+}
+
+function truncate(text) {
+    if (text.length > 400) {
+        return text.substring(0, 399) + '…';
+    }
+    return text;
+}
