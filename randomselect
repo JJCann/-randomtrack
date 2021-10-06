@@ -77,8 +77,6 @@ function normalize(text) {
     /* Condense whitespace */
     text = text.replace(/\s+/g, ' ');
 
-    /*remove last comma*/
-    text = text.substring(0, text.length - 1);
     
     return text.trim();
 }
@@ -141,6 +139,9 @@ function parse_query(query_before = '') {
 function truncate(text) {
     if (text.length > 400) {
         return text.substring(0, 399) + '…';
-    }
+        
+    /*remove last comma*/
+    text = text.substring(0, text.length - 1);}
+    
     return text;
 }
