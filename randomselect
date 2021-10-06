@@ -69,6 +69,9 @@ function normalize(text) {
 
     /* Remove everything behind '@' */
     text = text.replace(/\s*@.*/, '');
+    
+    /* Remove everything behind last comma */
+    text = text.replace(/,\s*$/, "");
 
     /* Remove all chars that are not letters */
     text = text.replace(/[^a-z0-9 ]+/g, '');
