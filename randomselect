@@ -54,7 +54,7 @@ function car(query = '', data = {}) {
 }
 
 /*remove last comma*/
-carpl = str.replace(/,\s*$/, "");
+carpl = carpl.replace(/,\s*$/, "");
 
 
 function normalize(text) {
