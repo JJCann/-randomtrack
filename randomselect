@@ -70,7 +70,7 @@ function normalize(text) {
     /* Remove everything behind '@' */
     text = text.replace(/\s*@.*/, '');
     
-    /* Remove everything behind last comma */
+    /* Remove last comma */
     text = text.replace(/,\s*$/, "");
 
     /* Remove all chars that are not letters */
