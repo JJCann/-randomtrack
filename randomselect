@@ -48,7 +48,7 @@ function car(query = '', data = {}) {
         const i = Math.floor(Math.random() * cars.length);
         const car = cars[i];
         
-        return car;
+        return car + ',';
     }
     return 'Could not find a matching random car ¯\\_(ツ)_/¯';
 }
