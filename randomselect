@@ -84,6 +84,8 @@ function normalize(text) {
 
 function parse_query(query_before = '') {
     var query_after = '';
+    
+    query_after = query_before.replace(/,\s*$/, "");
 
     query_after = query_before.replace(/\ball\b/g, '');
     if (query_before !== query_after) return ['All', query_after.trim()];
