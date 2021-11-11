@@ -840,7 +840,7 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bschafterv12\b/g, '');
     if (query_before !== query_after) return ['Schafter V12', query_after.trim()];
     
-       query_after = query_before.replace(/\bschlagen\b/g, '');
+       query_after = query_before.replace(/\bschlagengt\b/g, '');
     if (query_before !== query_after) return ['Schlagen GT', query_after.trim()];
     
     query_after = query_before.replace(/\bschwartzer\b/g, '');
