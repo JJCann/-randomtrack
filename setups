@@ -696,8 +696,8 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bpr4\b/g, '');
     if (query_before !== query_after) return ['PR4', query_after.trim()];
 
-    query_after = query_before.replace(/\bprarie\b/g, '');
-    if (query_before !== query_after) return ['Prarie', query_after.trim()];
+    query_after = query_before.replace(/\bprairie\b/g, '');
+    if (query_before !== query_after) return ['Prairie', query_after.trim()];
 
      query_after = query_before.replace(/\bpremier\b/g, '');
     if (query_before !== query_after) return ['Premier', query_after.trim()];
