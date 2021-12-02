@@ -51,7 +51,7 @@ function track(query, track_name, track_link) {
         const track = names[i];
         const link = links[i];
 
-        return track + ' - ' + link;
+        return track + ' - https://' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
@@ -85,8 +85,8 @@ function normalize(text) {
 function parse_query(query_before = '') {
     var query_after = '';
 
-/*    query_after = query_before.replace(/\bjazz\b/g, '');
-    if (query_before !== query_after) return ['JAZZ', query_after.trim()];   */
+    query_after = query_before.replace(/\bjazz\b/g, '');
+    if (query_before !== query_after) return ['JAZZ', query_after.trim()];   
 
     query_after = query_before.replace(/\bfun\b/g, '');
     if (query_before !== query_after) return ['Fun', query_after.trim()];
