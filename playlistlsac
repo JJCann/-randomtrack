@@ -51,7 +51,7 @@ function track(query, track_name, track_link) {
         const track = names[i];
         const link = links[i];
 
-        return track + ' - ' + link;
+        return track + ' - https://' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
 }
