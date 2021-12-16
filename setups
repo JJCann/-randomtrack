@@ -612,6 +612,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bmananacustom\b/g, '');
     if (query_before !== query_after) return ['Manana Custom', query_after.trim()];
     
+    query_after = query_before.replace(/\bmarshall\b/g, '');
+    if (query_before !== query_after) return ['Marshall', query_after.trim()];
+    
     query_after = query_before.replace(/\bmassacro\b/g, '');
     if (query_before !== query_after) return ['Massacro', query_after.trim()];
     
