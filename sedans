@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !sedans, then a space, then the tier you want (S - H)'
+        return 'To use this command, write !sedans, then a space, then the tier you want (S - J)'
     }
  
     /* Output a random group (or error message) */
@@ -77,6 +77,9 @@ function parse_query(query_before='') {
        
         query_after = query_before.replace(/\bi\b/g, '');
     if (query_before !== query_after) return ['I', query_after.trim()];
+    
+        query_after = query_before.replace(/\bj\b/g, '');
+    if (query_before !== query_after) return ['J', query_after.trim()];
     
     return ['', query_before];
 }
