@@ -976,7 +976,7 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     if (query_before !== query_after) return ['Sultan RS Classic', query_after.trim()];
     
     query_after = query_before.replace(/\bsuperdiamond\b/g, '');
-    if (query_before !== query_after) return ['superdiamond', query_after.trim()];
+    if (query_before !== query_after) return ['Super Diamond', query_after.trim()];
 
     query_after = query_before.replace(/\bsurano\b/g, '');
     if (query_before !== query_after) return ['Surano', query_after.trim()];
