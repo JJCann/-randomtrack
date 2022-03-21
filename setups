@@ -66,6 +66,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\balpha\b/g, '');
     if (query_before !== query_after) return ['Alpha', query_after.trim()];
 
+    query_after = query_before.replace(/\barbitergt\b/g, '');
+    if (query_before !== query_after) return ['Arbiter GT', query_after.trim()];
+    
     query_after = query_before.replace(/\basbo\b/g, '');
     if (query_before !== query_after) return ['Asbo', query_after.trim()];
     
@@ -77,6 +80,9 @@ function parse_query(query_before='') {
 
         query_after = query_before.replace(/\bastron\b/g, '');
     if (query_before !== query_after) return ['Astron', query_after.trim()];
+    
+        query_after = query_before.replace(/\bastroncustom\b/g, '');
+    if (query_before !== query_after) return ['Astron Custom', query_after.trim()];
     
     query_after = query_before.replace(/\bautarch\b/g, '');
     if (query_before !== query_after) return ['Autarch', query_after.trim()];
@@ -263,6 +269,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     
     query_after = query_before.replace(/\bcyclone\b/g, '');
     if (query_before !== query_after) return ['Cyclone', query_after.trim()];
+    
+    query_after = query_before.replace(/\bcyclone2\b/g, '');
+    if (query_before !== query_after) return ['Cyclone II', query_after.trim()];
     
     query_after = query_before.replace(/\bcypher\b/g, '');
     if (query_before !== query_after) return ['Cypher', query_after.trim()];
@@ -849,6 +858,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
      query_after = query_before.replace(/\bs80rr\b/g, '');
     if (query_before !== query_after) return ['S80RR', query_after.trim()];
     
+     query_after = query_before.replace(/\bs95\b/g, '');
+    if (query_before !== query_after) return ['S95', query_after.trim()];
+    
     query_after = query_before.replace(/\bsabreturbo\b/g, '');
     if (query_before !== query_after) return ['Sabre Turbo', query_after.trim()];
     
@@ -1125,6 +1137,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bwashington\b/g, '');
     if (query_before !== query_after) return ['Washington', query_after.trim()];
 
+    query_after = query_before.replace(/\bweaponisedignus\b/g, '');
+    if (query_before !== query_after) return ['Weaponised Ignus', query_after.trim()];
+    
     query_after = query_before.replace(/\bweevil\b/g, '');
     if (query_before !== query_after) return ['Weevil', query_after.trim()];
 
