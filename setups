@@ -453,6 +453,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bglendalecustom\b/g, '');
     if (query_before !== query_after) return ['Glendale Custom', query_after.trim()];
 
+    query_after = query_before.replace(/\bgogomonkeyblista\b/g, '');
+    if (query_before !== query_after) return ['Go Go Monkey Blista', query_after.trim()];
+    
     query_after = query_before.replace(/\bgp1\b/g, '');
     if (query_before !== query_after) return ['GP1', query_after.trim()];
     
