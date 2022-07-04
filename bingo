@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !setup $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/16_g2Txc8gzI5cuk7Juv0_rdHcxTX6cK38l0FfQSd-s8/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/bingo);)
+ * !editcom -ul=everyone -cd=5 !bingo $(eval group('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/16_g2Txc8gzI5cuk7Juv0_rdHcxTX6cK38l0FfQSd-s8/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/bingo);)
 */
 function group(query = '', data = {}) {
     query = normalize(query);
@@ -17,7 +17,7 @@ function group(query = '', data = {}) {
         const i = Math.floor(Math.random() * groups.length);
         const group = groups[i];
         
-        return group + '   **__This is a basic setup to start with. You will need to do your own testing to refine this!__**';
+        return group;
     }
     return 'Could not find a matching car ¯\\_(ツ)_/¯';
 }
@@ -72,7 +72,7 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\barbitergt\b/g, '');
     if (query_before !== query_after) return ['Arbiter GT', query_after.trim()];
     
-    query_after = query_before.replace(/\barbitergtHSW\b/g, '');
+    query_after = query_before.replace(/\barbitergthsw\b/g, '');
     if (query_before !== query_after) return ['Arbiter GT (HSW)', query_after.trim()];
     
     query_after = query_before.replace(/\basbo\b/g, '');
@@ -90,7 +90,7 @@ function parse_query(query_before='') {
         query_after = query_before.replace(/\bastroncustom\b/g, '');
     if (query_before !== query_after) return ['Astron Custom', query_after.trim()];
        
-        query_after = query_before.replace(/\bastroncustomHSW\b/g, '');
+        query_after = query_before.replace(/\bastroncustomhsw\b/g, '');
     if (query_before !== query_after) return ['Astron Custom (HSW)', query_after.trim()];
     
     query_after = query_before.replace(/\bautarch\b/g, '');
