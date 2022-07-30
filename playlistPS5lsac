@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !playlist $(eval playlist('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1TCmMg4DvB5SpGFQEcXLYIl0FMlavB3NssGKaQY_Cmb0/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1nstFU8Qq95ubWfNhmgH_PWeFT2LWjtLtOcAsg9bIflo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/playlistlsac);)
+ * !editcom -ul=everyone -cd=5 !playlistps5 $(eval playlist('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1TCmMg4DvB5SpGFQEcXLYIl0FMlavB3NssGKaQY_Cmb0/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1nstFU8Qq95ubWfNhmgH_PWeFT2LWjtLtOcAsg9bIflo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/playlistPS5lsac);)
 */
 function playlist(query, track_name, track_link) {
     query = normalize(query);
