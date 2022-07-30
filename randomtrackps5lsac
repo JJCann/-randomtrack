@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !randomtrack $(eval track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1TCmMg4DvB5SpGFQEcXLYIl0FMlavB3NssGKaQY_Cmb0/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1nstFU8Qq95ubWfNhmgH_PWeFT2LWjtLtOcAsg9bIflo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtracklsac);)
+ * !editcom -ul=everyone -cd=5 !randomtrackps5 $(eval track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1TCmMg4DvB5SpGFQEcXLYIl0FMlavB3NssGKaQY_Cmb0/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1nstFU8Qq95ubWfNhmgH_PWeFT2LWjtLtOcAsg9bIflo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrackps5lsac);)
 */
 function track(query = '', track_name = {}, track_link = {}) {
     query = normalize(query);
@@ -11,7 +11,7 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!randomtrack`, then a space, then either `serious`, `troll` or `offroad`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
+        return 'To use this command, write `!randomtrackps5`, then a space, then either `serious`, `troll` or `offroad`. For PS4 tracks only, use `!randomtrackps4`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
     }
  
     /* Output a random track (or error message) */
