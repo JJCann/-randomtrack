@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !randomtrackps4 $(eval track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1rjaElT--iBujCYa-00DOHExZgrfh2BCTDUVnCRXg7nM/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1rjaElT--iBujCYa-00DOHExZgrfh2BCTDUVnCRXg/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrackps4lsac);)
+ * !editcom -ul=everyone -cd=5 !randomtrackps4 $(eval track('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1rjaElT--iBujCYa-00DOHExZgrfh2BCTDUVnCRXg7nM/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1sMf-afA9qYImi8yhXAERLKv4i5jvNfPzCpcWLip2riY/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/randomtrackps4lsac);)
 */
 function track(query = '', track_name = {}, track_link = {}) {
     query = normalize(query);
