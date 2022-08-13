@@ -74,9 +74,6 @@ function parse_query(query_before='') {
     
     query_after = query_before.replace(/\bh\b/g, '');
     if (query_before !== query_after) return ['H', query_after.trim()];
-
-    query_after = query_before.replace(/\bi\b/g, '');
-    if (query_before !== query_after) return ['I', query_after.trim()];
     
     return ['', query_before];
 }
