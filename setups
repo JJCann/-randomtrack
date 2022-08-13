@@ -981,6 +981,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bspectercustom\b/g, '');
     if (query_before !== query_after) return ['Specter Custom', query_after.trim()];
 
+    query_after = query_before.replace(/\bspeedo\b/g, '');
+    if (query_before !== query_after) return ['Speedo', query_after.trim()];
+    
      query_after = query_before.replace(/\bsprunkbuffalo\b/g, '');
     if (query_before !== query_after) return ['Sprunk Buffalo', query_after.trim()];
 
