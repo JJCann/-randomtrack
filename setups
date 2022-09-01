@@ -1080,7 +1080,7 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\btorero\b/g, '');
     if (query_before !== query_after) return ['Torero', query_after.trim()];
 
-    query_after = query_before.replace(/\btorerox0\b/g, '');
+    query_after = query_before.replace(/\btoreroxo\b/g, '');
     if (query_before !== query_after) return ['Torero XO', query_after.trim()];
     
     query_after = query_before.replace(/\btornado\b/g, '');
