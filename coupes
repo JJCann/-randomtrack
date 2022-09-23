@@ -62,6 +62,9 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\bd\b/g, '');
     if (query_before !== query_after) return ['D', query_after.trim()];
+
+    query_after = query_before.replace(/\be\b/g, '');
+    if (query_before !== query_after) return ['E', query_after.trim()];
     
     return ['', query_before];
 }
