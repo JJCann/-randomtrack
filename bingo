@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'The aim is to complete a row or column. When you do, shout BINGO! Create your own bingo card here. Do not reroll! https://mfbc.us/m/ej5e4k8. For a specific car, type !bingo then a space, then the car';
+        return 'The aim is to complete a row or column. When you do, shout BINGO! Create your own bingo card here. Do not reroll! https://mfbc.us/m/guj9kyy. For a specific car, type !bingo then a space, then the car';
     }
  
     /* Output a random group (or error message) */
