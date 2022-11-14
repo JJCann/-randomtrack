@@ -12,11 +12,6 @@ function hotlap(query, track_name, track_link, car) {
         const arg1 = args.shift(); /* track type */
         const arg2 = args.shift(); /* car type */
         
- const [carname] = parse_query(query);
-    const cars = data[carname];
-    if (cars !== Object(cars)) {
-        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)'
-        
         if (arg2 === undefined) {
             tracks.push(track(arg1, track_name, track_link));
         } else {
@@ -59,7 +54,12 @@ function track(query, track_name, track_link) {
         return track + ' - https://' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
-}
+    
+    /*find car from category*/
+ const [carname] = parse_query(query);
+    const cars = data[carname];
+    if (cars !== Object(cars)) {
+        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)'}
 
 function normalize(text) {
     if (!text) {
@@ -102,6 +102,57 @@ function parse_query(query_before = '') {
     query_after = query_before.replace(/\brally\b/g, '');
     if (query_before !== query_after) return ['Rally', query_after.trim()];
 
+    function parse_query(query_before='') {
+    var query_after = '';
+
+    query_after = query_before.replace(/\ball\b/g, '');
+    if (query_before !== query_after) return ['All', query_after.trim()];
+
+    query_after = query_before.replace(/\bsuper\b/g, '');
+    if (query_before !== query_after) return ['Super', query_after.trim()];
+
+    query_after = query_before.replace(/\bsport\b/g, '');
+    if (query_before !== query_after) return ['Sport', query_after.trim()];
+
+    query_after = query_before.replace(/\brally\b/g, '');
+    if (query_before !== query_after) return ['Rally', query_after.trim()];
+
+    query_after = query_before.replace(/\bsportsclassic\b/g, '');
+    if (query_before !== query_after) return ['SportsClassic', query_after.trim()];
+
+    query_after = query_before.replace(/\bmuscle\b/g, '');
+    if (query_before !== query_after) return ['Muscle', query_after.trim()];
+
+    query_after = query_before.replace(/\boffroad\b/g, '');
+    if (query_before !== query_after) return ['Offroad', query_after.trim()];
+
+    query_after = query_before.replace(/\bcoupe\b/g, '');
+    if (query_before !== query_after) return ['Coupe', query_after.trim()];
+    
+    query_after = query_before.replace(/\bopenwheel\b/g, '');
+    if (query_before !== query_after) return ['OpenWheel', query_after.trim()];
+
+    query_after = query_before.replace(/\bspecial\b/g, '');
+    if (query_before !== query_after) return ['Special', query_after.trim()];
+
+    query_after = query_before.replace(/\bcompact\b/g, '');
+    if (query_before !== query_after) return ['Compact', query_after.trim()];
+
+    query_after = query_before.replace(/\bvan\b/g, '');
+    if (query_before !== query_after) return ['Van', query_after.trim()];
+
+    query_after = query_before.replace(/\bsedan\b/g, '');
+    if (query_before !== query_after) return ['Sedan', query_after.trim()];
+
+    query_after = query_before.replace(/\bsuv\b/g, '');
+    if (query_before !== query_after) return ['SUV', query_after.trim()];
+
+    query_after = query_before.replace(/\bmeme\b/g, '');
+    if (query_before !== query_after) return ['Meme', query_after.trim()];
+    
+     query_after = query_before.replace(/\btuner\b/g, '');
+    if (query_before !== query_after) return ['Tuner', query_after.trim()];
+    
     return ['', query_before];
 }
 
