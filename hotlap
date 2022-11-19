@@ -3,84 +3,17 @@
  * !editcom -ul=everyone -cd=5 !hotlap $(eval hotlap('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1IT3gGl7DmV-STkL-vPrek6T50kzGwql27Fa9hSTQQDE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/hotlap);)
 */
 function hotlap(query = '', track_names, track_links, car_data) {
-
   
   const query2 = parse_query(query);
   const query3 = query2.split(' ');
   const first_half = query3[0];
   const second_half = query3[1];
   
-  
   const car2 = car(second_half, car_data);
   const track2 = track(first_half, track_names, track_links);
 
 return car2 + ' - ' + track2;
 
-function parse_query(query_before = '') {
-    var query_after = '';
-
-    query_after = query_before.replace(/\bjazz\b/g, '');
-    if (query_before !== query_after) return ['JAZZ', query_after.trim()];   
-
-    query_after = query_before.replace(/\bfun\b/g, '');
-    if (query_before !== query_after) return ['Fun', query_after.trim()];
-
-    query_after = query_before.replace(/\bserious\b/g, '');
-    if (query_before !== query_after) return ['Serious', query_after.trim()];
-
-    query_after = query_before.replace(/\brally\b/g, '');
-    if (query_before !== query_after) return ['Rally', query_after.trim()];
-    
-    query_after = query_before.replace(/\ball\b/g, '');
-    if (query_before !== query_after) return ['All', query_after.trim()];
-
-    query_after = query_before.replace(/\bsuper\b/g, '');
-    if (query_before !== query_after) return ['Super', query_after.trim()];
-
-    query_after = query_before.replace(/\bsport\b/g, '');
-    if (query_before !== query_after) return ['Sport', query_after.trim()];
-
-    query_after = query_before.replace(/\brally\b/g, '');
-    if (query_before !== query_after) return ['Rally', query_after.trim()];
-
-    query_after = query_before.replace(/\bsportsclassic\b/g, '');
-    if (query_before !== query_after) return ['SportsClassic', query_after.trim()];
-
-    query_after = query_before.replace(/\bmuscle\b/g, '');
-    if (query_before !== query_after) return ['Muscle', query_after.trim()];
-
-    query_after = query_before.replace(/\boffroad\b/g, '');
-    if (query_before !== query_after) return ['Offroad', query_after.trim()];
-
-    query_after = query_before.replace(/\bcoupe\b/g, '');
-    if (query_before !== query_after) return ['Coupe', query_after.trim()];
-    
-    query_after = query_before.replace(/\bopenwheel\b/g, '');
-    if (query_before !== query_after) return ['OpenWheel', query_after.trim()];
-
-    query_after = query_before.replace(/\bspecial\b/g, '');
-    if (query_before !== query_after) return ['Special', query_after.trim()];
-
-    query_after = query_before.replace(/\bcompact\b/g, '');
-    if (query_before !== query_after) return ['Compact', query_after.trim()];
-
-    query_after = query_before.replace(/\bvan\b/g, '');
-    if (query_before !== query_after) return ['Van', query_after.trim()];
-
-    query_after = query_before.replace(/\bsedan\b/g, '');
-    if (query_before !== query_after) return ['Sedan', query_after.trim()];
-
-    query_after = query_before.replace(/\bsuv\b/g, '');
-    if (query_before !== query_after) return ['SUV', query_after.trim()];
-
-    query_after = query_before.replace(/\bmeme\b/g, '');
-    if (query_before !== query_after) return ['Meme', query_after.trim()];
-    
-     query_after = query_before.replace(/\btuner\b/g, '');
-    if (query_before !== query_after) return ['Tuner', query_after.trim()];
-    
-    return ['', query_before];
-}
 }
 
 function track(query = '', track_name = {}, track_link = {}) {
@@ -155,7 +88,71 @@ function normalize(text) {
     return text.trim();
 }
 
+function parse_query(query_before = '') {
+    var query_after = '';
 
+    query_after = query_before.replace(/\bjazz\b/g, '');
+    if (query_before !== query_after) return ['JAZZ', query_after.trim()];   
+
+    query_after = query_before.replace(/\bfun\b/g, '');
+    if (query_before !== query_after) return ['Fun', query_after.trim()];
+
+    query_after = query_before.replace(/\bserious\b/g, '');
+    if (query_before !== query_after) return ['Serious', query_after.trim()];
+
+    query_after = query_before.replace(/\brally\b/g, '');
+    if (query_before !== query_after) return ['Rally', query_after.trim()];
+    
+    query_after = query_before.replace(/\ball\b/g, '');
+    if (query_before !== query_after) return ['All', query_after.trim()];
+
+    query_after = query_before.replace(/\bsuper\b/g, '');
+    if (query_before !== query_after) return ['Super', query_after.trim()];
+
+    query_after = query_before.replace(/\bsport\b/g, '');
+    if (query_before !== query_after) return ['Sport', query_after.trim()];
+
+    query_after = query_before.replace(/\brally\b/g, '');
+    if (query_before !== query_after) return ['Rally', query_after.trim()];
+
+    query_after = query_before.replace(/\bsportsclassic\b/g, '');
+    if (query_before !== query_after) return ['SportsClassic', query_after.trim()];
+
+    query_after = query_before.replace(/\bmuscle\b/g, '');
+    if (query_before !== query_after) return ['Muscle', query_after.trim()];
+
+    query_after = query_before.replace(/\boffroad\b/g, '');
+    if (query_before !== query_after) return ['Offroad', query_after.trim()];
+
+    query_after = query_before.replace(/\bcoupe\b/g, '');
+    if (query_before !== query_after) return ['Coupe', query_after.trim()];
+    
+    query_after = query_before.replace(/\bopenwheel\b/g, '');
+    if (query_before !== query_after) return ['OpenWheel', query_after.trim()];
+
+    query_after = query_before.replace(/\bspecial\b/g, '');
+    if (query_before !== query_after) return ['Special', query_after.trim()];
+
+    query_after = query_before.replace(/\bcompact\b/g, '');
+    if (query_before !== query_after) return ['Compact', query_after.trim()];
+
+    query_after = query_before.replace(/\bvan\b/g, '');
+    if (query_before !== query_after) return ['Van', query_after.trim()];
+
+    query_after = query_before.replace(/\bsedan\b/g, '');
+    if (query_before !== query_after) return ['Sedan', query_after.trim()];
+
+    query_after = query_before.replace(/\bsuv\b/g, '');
+    if (query_before !== query_after) return ['SUV', query_after.trim()];
+
+    query_after = query_before.replace(/\bmeme\b/g, '');
+    if (query_before !== query_after) return ['Meme', query_after.trim()];
+    
+     query_after = query_before.replace(/\btuner\b/g, '');
+    if (query_before !== query_after) return ['Tuner', query_after.trim()];
+    
+    return ['', query_before];
+}
 
 function truncate(text) {
     if (text.length > 400) {
