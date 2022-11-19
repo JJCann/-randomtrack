@@ -94,9 +94,6 @@ function parse_query(query_before = '') {
     query_after = query_before.replace(/\brally\b/g, '');
     if (query_before !== query_after) return ['Rally', query_after.trim()];
 
-    function parse_query(query_before='') {
-    var query_after = '';
-
     query_after = query_before.replace(/\ball\b/g, '');
     if (query_before !== query_after) return ['All', query_after.trim()];
 
