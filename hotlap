@@ -25,7 +25,7 @@ function track(query = '', track_name = {}, track_link = {}) {
         return track + ' - https://' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
-}
+
 
 function car(query = '', data = {}) {
     query = normalize(query);
@@ -54,7 +54,7 @@ function car(query = '', data = {}) {
         return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`'}
 }
 return car + track + ' - https://' + link
-}
+
 
 function normalize(text) {
     if (!text) {
