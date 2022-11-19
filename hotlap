@@ -6,15 +6,6 @@ function hotlap(query = '', track_names, track_links, car_data) {
 
   const car2 = car(query, car_data);
   const track2 = track(query, track_names, track_links);
- if (car2 !== Object(car)) {
-    
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';   
-        }
-        
- if (track2 !== Object(track)) {
-    
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';   
-        }
  
 return car2 + ' - ' + track2 + ' - https://' + link;
 }
