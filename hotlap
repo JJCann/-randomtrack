@@ -51,7 +51,7 @@ function car(query = '', data = {}) {
  const [carname] = parse_query(query);
     const cars = data[carname];
     if (cars !== Object(cars)) {
-        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)'}
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`}
 }
 
 function normalize(text) {
