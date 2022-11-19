@@ -4,83 +4,17 @@
 */
 function hotlap(query = '', track_names, track_links, car_data) {
 
-  const car2 = car(query, car_data);
-  const track2 = track(query, track_names, track_links);
- 
+  
+  const query2 = parse_query(query);
+  const query3 = query2.split(' ');
+  const first_half = query3[0];
+  const second_half = query3[1];
+  
+  
+  const car2 = car(second_half, car_data);
+  const track2 = track(first_half, track_names, track_links);
+
 return car2 + ' - ' + track2;
-}
-
-function track(query = '', track_name = {}, track_link = {}) {
-    query = normalize(query);
-
-    /* Find all tracks that match the specified track type */
-    const [trackname] = parse_query(query);
-    const names = track_name[trackname];
-    const [tracklink] = parse_query(query);
-    const links = track_link[tracklink];
-    if (names !== Object(names)) {
-    
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';   
-        }
- 
-    /* Output a random track (or error message) */
-    if (names.length > 0) {
-        const i = Math.floor(Math.random() * names.length);
-        const track = names[i];
-        const link = links[i];
-        
-        return track + ' - https://' + link;
-    }
-    return 'Could not find a matching random track ¯\\_(ツ)_/¯';
-}
-
-function car(query = '', data = {}) {
-    query = normalize(query);
-
-    /* Find all car that match the specified track type */
-    const [carname] = parse_query2(query);
-    const cars = data[carname];
-    if (cars !== Object(cars)) {
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';
-    }
- 
-    /* Output a random car (or error message) */
-    if (cars.length > 0) {
-        const i = Math.floor(Math.random() * cars.length);
-        const car = cars[i];
-        
-        return car;
-    }
-    return 'Could not find a matching random car ¯\\_(ツ)_/¯';
-}
-
-
-
-function normalize(text) {
-    if (!text) {
-        text = '';
-    }
-
-    /* Convert to lowercase */
-    text = text.toLowerCase();
-
-    /* Remove plural (unless part of 'PS 4')*/
-    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
-
-    /* Remove accents */
-    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-    /* Remove everything behind '@' */
-    text = text.replace(/\s*@.*/, '');
-
-    /* Remove all chars that are not letters */
-    text = text.replace(/[^a-z0-9 ]+/g, '');
-
-    /* Condense whitespace */
-    text = text.replace(/\s+/g, ' ');
-
-    return text.trim();
-}
 
 function parse_query(query_before = '') {
     var query_after = '';
@@ -96,11 +30,6 @@ function parse_query(query_before = '') {
 
     query_after = query_before.replace(/\brally\b/g, '');
     if (query_before !== query_after) return ['Rally', query_after.trim()];
-
-}
-
-function parse_query2(query_before = '') {
-    var query_after = '';
     
     query_after = query_before.replace(/\ball\b/g, '');
     if (query_before !== query_after) return ['All', query_after.trim()];
@@ -152,6 +81,81 @@ function parse_query2(query_before = '') {
     
     return ['', query_before];
 }
+}
+
+function track(query = '', track_name = {}, track_link = {}) {
+    query = normalize(query);
+
+    /* Find all tracks that match the specified track type */
+    const [trackname] = parse_query(query);
+    const names = track_name[trackname];
+    const [tracklink] = parse_query(query);
+    const links = track_link[tracklink];
+    if (names !== Object(names)) {
+    
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';   
+        }
+ 
+    /* Output a random track (or error message) */
+    if (names.length > 0) {
+        const i = Math.floor(Math.random() * names.length);
+        const track = names[i];
+        const link = links[i];
+        
+        return track + ' - https://' + link;
+    }
+    return 'Could not find a matching random track ¯\\_(ツ)_/¯';
+}
+
+function car(query = '', data = {}) {
+    query = normalize(query);
+
+    /* Find all car that match the specified track type */
+    const [carname] = parse_query(query);
+    const cars = data[carname];
+    if (cars !== Object(cars)) {
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';
+    }
+ 
+    /* Output a random car (or error message) */
+    if (cars.length > 0) {
+        const i = Math.floor(Math.random() * cars.length);
+        const car = cars[i];
+        
+        return car;
+    }
+    return 'Could not find a matching random car ¯\\_(ツ)_/¯';
+}
+
+
+
+function normalize(text) {
+    if (!text) {
+        text = '';
+    }
+
+    /* Convert to lowercase */
+    text = text.toLowerCase();
+
+    /* Remove plural (unless part of 'PS 4')*/
+    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
+
+    /* Remove accents */
+    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    /* Remove everything behind '@' */
+    text = text.replace(/\s*@.*/, '');
+
+    /* Remove all chars that are not letters */
+    text = text.replace(/[^a-z0-9 ]+/g, '');
+
+    /* Condense whitespace */
+    text = text.replace(/\s+/g, ' ');
+
+    return text.trim();
+}
+
+
 
 function truncate(text) {
     if (text.length > 400) {
