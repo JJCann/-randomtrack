@@ -13,8 +13,9 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';
-    }
+    
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';   
+        }
  
     /* Output a random track (or error message) */
     if (names.length > 0) {
