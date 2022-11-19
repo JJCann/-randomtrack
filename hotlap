@@ -1,39 +1,10 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !hotlap $(eval hotlap('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)), $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/hotlap);)
+ * !editcom -ul=everyone -cd=5 !hotlap $(eval hotlap('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)), $(urlfetch json https://docs.google.com/spreadsheets/d/1IT3gGl7DmV-STkL-vPrek6T50kzGwql27Fa9hSTQQDE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/hotlap);)
 */
-function hotlap(query, track_name, track_link, car) {
-    query = normalize(query);
+function hotlap(query = '', track, car) {
 
-    const tracks = [];
-    const args = query.split(' ');
-
-    while (args.length > 0) {
-        const arg1 = args.shift(); /* track type */
-        const arg2 = args.shift(); /* car type */
-        
-        if (arg2 === undefined) {
-            tracks.push(track(arg1, track_name, track_link));
-        } else {
-            const amount = parseInt(arg2);
-            if (isNaN(amount)) {
-                args.unshift(arg2); /* restore the 2nd argument, if it is not a number */
-            } else {
-                for (var i = 0; i < amount; i++) {
-                    tracks.push(track(arg1, track_name, track_link));
-                }
-            }
-        }
-    }
-
-    if (tracks.length > 0) {
-        return truncate(tracks.join(' '));
-    }
-
-    return 'Could not find a matching random track ¯\\_(ツ)_/¯';
-}
-
-function track(query, track_name, track_link) {
+function track(query = '', track_name = {}, track_link = {}) {
     query = normalize(query);
 
     /* Find all tracks that match the specified track type */
@@ -42,24 +13,46 @@ function track(query, track_name, track_link) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!playlistps5`, then a space, then either `jazz`, `serious`, `fun` or `rally`, then the number of those tracks you want. For PS4 tracks only, use `!playlistps4`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
+        return 'To use this command, write `!randomtrackps5`, then a space, then either `jazz`, `serious`, `fun` or `rally`. For PS4 tracks only, use `!randomtrackps4`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
     }
-
+ 
     /* Output a random track (or error message) */
     if (names.length > 0) {
         const i = Math.floor(Math.random() * names.length);
         const track = names[i];
         const link = links[i];
-
+        
         return track + ' - https://' + link;
     }
     return 'Could not find a matching random track ¯\\_(ツ)_/¯';
+}
+
+function car(query = '', data = {}) {
+    query = normalize(query);
+
+    /* Find all car that match the specified track type */
+    const [carname] = parse_query(query);
+    const cars = data[carname];
+    if (cars !== Object(cars)) {
+        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)'
+    }
+ 
+    /* Output a random car (or error message) */
+    if (cars.length > 0) {
+        const i = Math.floor(Math.random() * cars.length);
+        const car = cars[i];
+        
+        return car;
+    }
+    return 'Could not find a matching random car ¯\\_(ツ)_/¯';
+}
     
     /*find car from category*/
  const [carname] = parse_query(query);
     const cars = data[carname];
     if (cars !== Object(cars)) {
         return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)'}
+}
 
 function normalize(text) {
     if (!text) {
