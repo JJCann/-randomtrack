@@ -54,7 +54,7 @@ function car(query = '', data = {}) {
         return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`'}
 }
 return car + ' - ' + track + ' - https://' + link;
-
+}
 
 function normalize(text) {
     if (!text) {
