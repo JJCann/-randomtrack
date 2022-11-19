@@ -13,7 +13,7 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`'
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';
     }
  
     /* Output a random track (or error message) */
@@ -34,7 +34,7 @@ function car(query = '', data = {}) {
     const [carname] = parse_query(query);
     const cars = data[carname];
     if (cars !== Object(cars)) {
-        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)'
+        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme)';
     }
  
     /* Output a random car (or error message) */
@@ -51,7 +51,7 @@ function car(query = '', data = {}) {
  const [carname] = parse_query(query);
     const cars = data[carname];
     if (cars !== Object(cars)) {
-        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`'}
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';}
 }
 return car + ' - ' + track + ' - https://' + link;
 
