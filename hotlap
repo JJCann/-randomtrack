@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !hotlap $(eval hotlap('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv)), $(urlfetch json https://docs.google.com/spreadsheets/d/1IT3gGl7DmV-STkL-vPrek6T50kzGwql27Fa9hSTQQDE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/hotlap);)
+ * !editcom -ul=everyone -cd=5 !hotlap $(eval hotlap('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/1_njtrZSzCgrhX4HuzNF5iBAO4KsZciKItB75tNMzAj8/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1Fx1sOY19eV4QGCH1kJ-aDZbEoUbnYkP-XcLlIXYChSo/export?exportFormat=tsv), $(urlfetch json https://docs.google.com/spreadsheets/d/1IT3gGl7DmV-STkL-vPrek6T50kzGwql27Fa9hSTQQDE/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/hotlap);)
 */
 function hotlap(query = '', track, car) {
 
@@ -13,7 +13,7 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!randomtrackps5`, then a space, then either `jazz`, `serious`, `fun` or `rally`. For PS4 tracks only, use `!randomtrackps4`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
+        return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`
     }
  
     /* Output a random track (or error message) */
