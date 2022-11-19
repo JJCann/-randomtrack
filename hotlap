@@ -163,3 +163,4 @@ function truncate(text) {
     }
     return text;
 }
+ 
