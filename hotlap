@@ -7,7 +7,7 @@ function hotlap(query = '', track_names, track_links, car_data) {
   const car2 = car(query, car_data);
   const track2 = track(query, track_names, track_links);
  
-return car2 + ' - ' + track2 + ' - https://' + link;
+return car2 + ' - ' + track2;
 }
 
 function track(query = '', track_name = {}, track_link = {}) {
