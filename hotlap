@@ -5,9 +5,8 @@
 function hotlap(query = '', track_names, track_links, car_data) {
   
   const query2 = parse_query(query);
-  const query3 = query2.split(' ');
-  const first_half = query3[0];
-  const second_half = query3[1];
+  const first_half = query2[0];
+  const second_half = query2[1];
   
   const car2 = car(second_half, car_data);
   const track2 = track(first_half, track_names, track_links);
