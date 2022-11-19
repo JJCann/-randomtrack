@@ -38,7 +38,7 @@ function car(query = '', data = {}) {
     query = normalize(query);
 
     /* Find all car that match the specified track type */
-    const [carname] = parse_query(query);
+    const [carname] = parse_query2(query);
     const cars = data[carname];
     if (cars !== Object(cars)) {
         return 'To use this command, write `!hotlap`, then a space, then track type, then a space, then car type - e.g `!hotlap serious all`';
