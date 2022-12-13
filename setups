@@ -60,6 +60,9 @@ function parse_query(query_before='') {
  query_after = query_before.replace(/\b190z\b/g, '');
     if (query_before !== query_after) return ['190z', query_after.trim()];
 
+ query_after = query_before.replace(/\b300r\b/g, '');
+    if (query_before !== query_after) return ['300R', query_after.trim()];
+    
     query_after = query_before.replace(/\b8fdrafter\b/g, '');
     if (query_before !== query_after) return ['8F Drafter', query_after.trim()];
 
@@ -74,6 +77,9 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\barbitergt\b/g, '');
     if (query_before !== query_after) return ['Arbiter GT', query_after.trim()];
+
+    query_after = query_before.replace(/\bardent\b/g, '');
+    if (query_before !== query_after) return ['Ardent', query_after.trim()];
     
     query_after = query_before.replace(/\basbo\b/g, '');
     if (query_before !== query_after) return ['Asbo', query_after.trim()];
@@ -150,6 +156,9 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\bbodhi\b/g, '');
     if (query_before !== query_after) return ['Bodhi', query_after.trim()];
 
+    query_after = query_before.replace(/\bboor\b/g, '');
+    if (query_before !== query_after) return ['Boor', query_after.trim()];
+    
     query_after = query_before.replace(/\bbr8\b/g, '');
     if (query_before !== query_after) return ['BR8', query_after.trim()];
 
@@ -164,6 +173,9 @@ function parse_query(query_before='') {
     
     query_after = query_before.replace(/\bbriosora\b/g, '');
     if (query_before !== query_after) return ['Brioso R/A', query_after.trim()];
+    
+    query_after = query_before.replace(/\bbroadway\b/g, '');
+    if (query_before !== query_after) return ['Broadway', query_after.trim()];
     
         query_after = query_before.replace(/\bbuccaneer\b/g, '');
     if (query_before !== query_after) return ['Buccaneer', query_after.trim()];
@@ -369,6 +381,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bemperor\b/g, '');
     if (query_before !== query_after) return ['Emperor', query_after.trim()];
     
+    query_after = query_before.replace(/\bentitymt\b/g, '');
+    if (query_before !== query_after) return ['Entity MT', query_after.trim()];
+    
     query_after = query_before.replace(/\bentityxf\b/g, '');
     if (query_before !== query_after) return ['Entity XF', query_after.trim()];
     
@@ -381,6 +396,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\beveron\b/g, '');
     if (query_before !== query_after) return ['Everon', query_after.trim()];
 
+    query_after = query_before.replace(/\beudora\b/g, '');
+    if (query_before !== query_after) return ['Eudora', query_after.trim()];
+    
     query_after = query_before.replace(/\beuros\b/g, '');
     if (query_before !== query_after) return ['Euros', query_after.trim()];
     
@@ -510,7 +528,10 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bhotknife\b/g, '');
     if (query_before !== query_after) return ['Hotknife', query_after.trim()];
     
-        query_after = query_before.replace(/\bhotringsabre\b/g, '');
+        query_after = query_before.replace(/\bhotringeveron\b/g, '');
+    if (query_before !== query_after) return ['Hotring Everon', query_after.trim()];
+    
+    query_after = query_before.replace(/\bhotringsabre\b/g, '');
     if (query_before !== query_after) return ['Hotring Sabre', query_after.trim()];
 
     query_after = query_before.replace(/\bhuntleys\b/g, '');
@@ -555,6 +576,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bissiclassic\b/g, '');
     if (query_before !== query_after) return ['Issi Classic', query_after.trim()];
 
+    query_after = query_before.replace(/\bissirally\b/g, '');
+    if (query_before !== query_after) return ['Issi Rally', query_after.trim()];
+    
     query_after = query_before.replace(/\bissisport\b/g, '');
     if (query_before !== query_after) return ['Issi Sport', query_after.trim()];
 
@@ -587,6 +611,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     
     query_after = query_before.replace(/\bjesterrr\b/g, '');
     if (query_before !== query_after) return ['Jester RR', query_after.trim()];
+
+    query_after = query_before.replace(/\bjourney2\b/g, '');
+    if (query_before !== query_after) return ['Journey II', query_after.trim()];
     
     query_after = query_before.replace(/\bjubilee\b/g, '');
     if (query_before !== query_after) return ['Jubilee', query_after.trim()];
@@ -698,6 +725,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
     query_after = query_before.replace(/\bnightshade\b/g, '');
     if (query_before !== query_after) return ['Nightshade', query_after.trim()];
+
+    query_after = query_before.replace(/\bnightshark\b/g, '');
+    if (query_before !== query_after) return ['Nightshark', query_after.trim()];
     
     query_after = query_before.replace(/\bnovak\b/g, '');
     if (query_before !== query_after) return ['Novak', query_after.trim()];
@@ -719,6 +749,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     
     query_after = query_before.replace(/\boutlaw\b/g, '');
     if (query_before !== query_after) return ['Outlaw', query_after.trim()];
+    
+    query_after = query_before.replace(/\bpanthere\b/g, '');
+    if (query_before !== query_after) return ['Panthere', query_after.trim()];
     
     query_after = query_before.replace(/\bpanto\b/g, '');
     if (query_before !== query_after) return ['Panto', query_after.trim()];
@@ -1043,6 +1076,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     
     query_after = query_before.replace(/\bsurfer\b/g, '');
     if (query_before !== query_after) return ['Surfer', query_after.trim()];
+
+    query_after = query_before.replace(/\bsurfercustom\b/g, '');
+    if (query_before !== query_after) return ['Surfer Custom', query_after.trim()];
     
         query_after = query_before.replace(/\bsurge\b/g, '');
     if (query_before !== query_after) return ['Surge', query_after.trim()];
@@ -1053,6 +1089,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bt20\b/g, '');
     if (query_before !== query_after) return ['T20', query_after.trim()];
 
+    query_after = query_before.replace(/\btahomacoupe\b/g, '');
+    if (query_before !== query_after) return ['Tahoma Coupe', query_after.trim()];
+    
     query_after = query_before.replace(/\btailgater\b/g, '');
     if (query_before !== query_after) return ['Tailgater', query_after.trim()];
 
@@ -1107,6 +1146,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\btulip\b/g, '');
     if (query_before !== query_after) return ['Tulip', query_after.trim()];
 
+    query_after = query_before.replace(/\btulipm100\b/g, '');
+    if (query_before !== query_after) return ['Tulip M-100', query_after.trim()];
+    
     query_after = query_before.replace(/\bturismoclassic\b/g, '');
     if (query_before !== query_after) return ['Turismo Classic', query_after.trim()];
 
@@ -1167,6 +1209,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
         query_after = query_before.replace(/\bvirgoclassiccustom\b/g, '');
     if (query_before !== query_after) return ['Virgo Classic Custom', query_after.trim()];
 
+    query_after = query_before.replace(/\bvirtue\b/g, '');
+    if (query_before !== query_after) return ['Virtue', query_after.trim()];
+    
     query_after = query_before.replace(/\bviseris\b/g, '');
     if (query_before !== query_after) return ['Viseris', query_after.trim()];
 
