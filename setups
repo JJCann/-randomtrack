@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !setup, then a space, then the car you want (no spaces or special characters in car name). For a full list of cars, check here - https://tinyurl.com/2ud3wpr9';
+        return 'To use this command, write !setup, then a space, then the car you want (no spaces or special characters in car name). For a full list of cars, check here - https://pastebin.com/raw/wbpy0bmz';
     }
  
     /* Output a random group (or error message) */
