@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !randomgroup, then a space, then the class you want (single, not plural, including all or multi)'
+        return 'To use this command, write !randomgroup, then a space, then the class you want (single, not plural, including all)'
     }
  
     /* Output a random group (or error message) */
@@ -56,9 +56,6 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\bsport\b/g, '');
     if (query_before !== query_after) return ['Sport', query_after.trim()];
-
-    query_after = query_before.replace(/\bmulti\b/g, '');
-    if (query_before !== query_after) return ['Multi', query_after.trim()];
 
     query_after = query_before.replace(/\bsportsclassic\b/g, '');
     if (query_before !== query_after) return ['SportsClassic', query_after.trim()];
