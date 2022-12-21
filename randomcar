@@ -95,6 +95,84 @@ function parse_query(query_before='') {
     
      query_after = query_before.replace(/\btuner\b/g, '');
     if (query_before !== query_after) return ['Tuner', query_after.trim()];
-      
+    
+     query_after = query_before.replace(/\ba\b/g, '');
+    if (query_before !== query_after) return ['A', query_after.trim()];
+
+     query_after = query_before.replace(/\bb\b/g, '');
+    if (query_before !== query_after) return ['B', query_after.trim()];
+
+     query_after = query_before.replace(/\bc\b/g, '');
+    if (query_before !== query_after) return ['C', query_after.trim()];
+
+     query_after = query_before.replace(/\bd\b/g, '');
+    if (query_before !== query_after) return ['D', query_after.trim()];
+
+     query_after = query_before.replace(/\be\b/g, '');
+    if (query_before !== query_after) return ['E', query_after.trim()];
+
+     query_after = query_before.replace(/\bf\b/g, '');
+    if (query_before !== query_after) return ['F', query_after.trim()];
+
+     query_after = query_before.replace(/\bg\b/g, '');
+    if (query_before !== query_after) return ['G', query_after.trim()];
+
+     query_after = query_before.replace(/\bh\b/g, '');
+    if (query_before !== query_after) return ['H', query_after.trim()];
+
+     query_after = query_before.replace(/\bi\b/g, '');
+    if (query_before !== query_after) return ['I', query_after.trim()];
+
+     query_after = query_before.replace(/\bj\b/g, '');
+    if (query_before !== query_after) return ['J', query_after.trim()];
+
+     query_after = query_before.replace(/\bk\b/g, '');
+    if (query_before !== query_after) return ['K', query_after.trim()];
+
+     query_after = query_before.replace(/\bl\b/g, '');
+    if (query_before !== query_after) return ['L', query_after.trim()];
+
+     query_after = query_before.replace(/\bm\b/g, '');
+    if (query_before !== query_after) return ['M', query_after.trim()];
+
+     query_after = query_before.replace(/\bn\b/g, '');
+    if (query_before !== query_after) return ['N', query_after.trim()];
+
+     query_after = query_before.replace(/\bo\b/g, '');
+    if (query_before !== query_after) return ['O', query_after.trim()];
+
+     query_after = query_before.replace(/\bp\b/g, '');
+    if (query_before !== query_after) return ['P', query_after.trim()];
+
+     query_after = query_before.replace(/\bq\b/g, '');
+    if (query_before !== query_after) return ['Q', query_after.trim()];
+
+     query_after = query_before.replace(/\br\b/g, '');
+    if (query_before !== query_after) return ['R', query_after.trim()];
+
+     query_after = query_before.replace(/\bs\b/g, '');
+    if (query_before !== query_after) return ['S', query_after.trim()];
+
+     query_after = query_before.replace(/\bt\b/g, '');
+    if (query_before !== query_after) return ['T', query_after.trim()];
+
+     query_after = query_before.replace(/\bu\b/g, '');
+    if (query_before !== query_after) return ['U', query_after.trim()];
+
+     query_after = query_before.replace(/\bv\b/g, '');
+    if (query_before !== query_after) return ['V', query_after.trim()];
+
+     query_after = query_before.replace(/\bw\b/g, '');
+    if (query_before !== query_after) return ['W', query_after.trim()];
+
+     query_after = query_before.replace(/\bx\b/g, '');
+    if (query_before !== query_after) return ['X', query_after.trim()];
+
+     query_after = query_before.replace(/\by\b/g, '');
+    if (query_before !== query_after) return ['Y', query_after.trim()];
+
+     query_after = query_before.replace(/\bz\b/g, '');
+    if (query_before !== query_after) return ['Z', query_after.trim()];
+
     return ['', query_before];
 }
