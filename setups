@@ -1263,8 +1263,8 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bxls\b/g, '');
     if (query_before !== query_after) return ['XLS', query_after.trim()];
 
-    query_after = query_before.replace(/\bxlsarmoured\b/g, '');
-    if (query_before !== query_after) return ['XLS Armoured', query_after.trim()];
+    query_after = query_before.replace(/\bxlsarmored\b/g, '');
+    if (query_before !== query_after) return ['XLS Armored', query_after.trim()];
 
     query_after = query_before.replace(/\byosemite\b/g, '');
     if (query_before !== query_after) return ['Yosemite', query_after.trim()];
