@@ -11,7 +11,7 @@ function track(query = '', track_name = {}, track_link = {}) {
     const [tracklink] = parse_query(query);
     const links = track_link[tracklink];
     if (names !== Object(names)) {
-        return 'To use this command, write `!randomtrack`, then a space, then either `jazz`, `serious`, `fun` or `rally`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
+        return 'To use this command, write `!randomtrack`, then a space, then either `jazz`, `serious`, `fun`, `rally` or `remake`. For anything more specific, check out the track spreadsheet! https://docs.google.com/spreadsheets/d/1T8wF5lqMdDzjttTOAb-_PMQ-4nvP7D7GtaOZovlCrcc'
     }
  
     /* Output a random track (or error message) */
@@ -62,6 +62,9 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\brally\b/g, '');
     if (query_before !== query_after) return ['Rally', query_after.trim()];
+
+    query_after = query_before.replace(/\bremake\b/g, '');
+    if (query_before !== query_after) return ['Remake', query_after.trim()];
 
     return ['', query_before];
 }
