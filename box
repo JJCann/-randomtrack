@@ -14,9 +14,9 @@ function car(query = '', data = {}) {
     /* Output a random car (or error message) */
     if (car.length > 0) {
         const i = Math.floor(Math.random() * car.length);
-        const car = car[i];
+        const cars = car[i];
         
-        return car;
+        return cars;
     }
     return 'Could not find one ¯\\_(ツ)_/¯';
 }
