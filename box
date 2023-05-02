@@ -1,0 +1,48 @@
+/*
+ * Nightbot command:
+ * !editcom -ul=everyone -cd=5 !box $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/13dBtO6p1NXLn1MnZS32oyvQNYWGyLoG1c9qy6U6KOa4/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/box);)
+*/
+function car(query = '', data = {}) {
+    query = normalize(query);
+ 
+    /* Output a random car (or error message) */
+    if (cars.length > 0) {
+        const i = Math.floor(Math.random() * cars.length);
+        const car = cars[i];
+        
+        return car;
+    }
+    return 'Could not find one ¯\\_(ツ)_/¯';
+}
+
+function normalize(text) {
+    if (!text) {
+        text = '';
+    }
+
+    /* Convert to lowercase */
+    text = text.toLowerCase();
+
+    /* Remove plural (unless part of 'PS 4')*/
+    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
+
+    /* Remove accents */
+    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    /* Remove everything behind '@' */
+    text = text.replace(/\s*@.*/, '');
+
+    /* Remove all chars that are not letters */
+    text = text.replace(/[^a-z0-9 ]+/g, '');
+
+    return text;
+}
+
+function parse_query(query_before='') {
+    var query_after = '';
+
+    query_after = query_before.replace(/\ball\b/g, '');
+    if (query_before !== query_after) return ['All', query_after.trim()];
+
+    return ['', query_before];
+}
