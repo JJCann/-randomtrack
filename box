@@ -1,16 +1,8 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !box $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/13dBtO6p1NXLn1MnZS32oyvQNYWGyLoG1c9qy6U6KOa4/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/box);)
+ * !editcom -ul=everyone -cd=5 !box $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/13dBtO6p1NXLn1MnZS32oyvQNYWGyLoG1c9qy6U6KOa4/export?exportFormat=tsv)).split(";"); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/box);)
 */
-function car(query = '', data = {}) {
-    query = normalize(query);
 
-    /* Find all car that match the specified track type */
-    const [carname] = parse_query(query);
-    const cars = data[carname];
-   
-    }
- 
     /* Output a random car (or error message) */
     if (car.length > 0) {
         const i = Math.floor(Math.random() * car.length);
@@ -19,33 +11,4 @@ function car(query = '', data = {}) {
         return cars;
     }
     return 'Could not find one ¯\\_(ツ)_/¯';
-}
-
-function normalize(text) {
-    if (!text) {
-        text = '';
-    }
-
-    /* Convert to lowercase */
-    text = text.toLowerCase();
-
-    /* Remove plural (unless part of 'PS 4')*/
-    text = text.replace(/(?<=\bp)s\b(?=4)/g, '');
-
-    /* Remove accents */
-    text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-    /* Remove everything behind '@' */
-    text = text.replace(/\s*@.*/, '');
-
-    /* Remove all chars that are not letters */
-    text = text.replace(/[^a-z0-9 ]+/g, '');
-
-    return text;
-}
-
-function parse_query(query_before='') {
-    var query_after = '';
-    
-      return ['', query_before];
 }
