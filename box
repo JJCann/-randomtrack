@@ -12,9 +12,9 @@ function car(query = '', data = {}) {
     }
  
     /* Output a random car (or error message) */
-    if (cars.length > 0) {
-        const i = Math.floor(Math.random() * cars.length);
-        const car = cars[i];
+    if (car.length > 0) {
+        const i = Math.floor(Math.random() * car.length);
+        const car = car[i];
         
         return car;
     }
