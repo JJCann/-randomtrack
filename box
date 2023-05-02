@@ -1,6 +1,6 @@
 /*
  * Nightbot command:
- * !editcom -ul=everyone -cd=5 !box $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/13dBtO6p1NXLn1MnZS32oyvQNYWGyLoG1c9qy6U6KOa4/export?exportFormat=tsv)).split(";"); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/box);)
+ * !editcom -ul=everyone -cd=5 !box $(eval car('$(query)', $(urlfetch json https://docs.google.com/spreadsheets/d/13dBtO6p1NXLn1MnZS32oyvQNYWGyLoG1c9qy6U6KOa4/export?exportFormat=tsv)); $(urlfetch json https://raw.githubusercontent.com/JJCann/-randomtrack/master/box);)
 */
 
     /* Output a random car (or error message) */
