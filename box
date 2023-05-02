@@ -8,8 +8,7 @@ function car(query = '', data = {}) {
     /* Find all car that match the specified track type */
     const [carname] = parse_query(query);
     const cars = data[carname];
-    if (cars !== Object(cars)) {
-        return 'To use this command, write !randomcar, then a space, then the class you want (single, not plural - including all/meme), or a letter (A-Z)'
+   
     }
  
     /* Output a random car (or error message) */
