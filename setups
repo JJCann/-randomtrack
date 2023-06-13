@@ -9,7 +9,7 @@ function group(query = '', data = {}) {
     const [groupname] = parse_query(query);
     const groups = data[groupname];
     if (groups !== Object(groups)) {
-        return 'To use this command, write !setup, then a space, then the car you want (no spaces or special characters in car name). For a full list of cars, check here - https://pastebin.com/raw/A0Z1dNx0';
+        return 'To use this command, write !setup, then a space, then the car you want (no spaces or special characters in car name). For a full list of cars, check here - https://pastebin.com/raw/LDjtGm9i';
     }
  
     /* Output a random group (or error message) */
@@ -165,6 +165,9 @@ function parse_query(query_before='') {
      query_after = query_before.replace(/\bbrawler\b/g, '');
     if (query_before !== query_after) return ['Brawler', query_after.trim()];
 
+     query_after = query_before.replace(/\bbrigham\b/g, '');
+    if (query_before !== query_after) return ['Brigham', query_after.trim()];
+    
     query_after = query_before.replace(/\bbrioso300\b/g, '');
     if (query_before !== query_after) return ['Brioso 300', query_after.trim()];
   
@@ -185,6 +188,9 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\bbuffalo\b/g, '');
     if (query_before !== query_after) return ['Buffalo', query_after.trim()];
+    
+    query_after = query_before.replace(/\bbuffaloevx\b/g, '');
+    if (query_before !== query_after) return ['Buffalo EVX', query_after.trim()];
     
     query_after = query_before.replace(/\bbuffalos\b/g, '');
     if (query_before !== query_after) return ['Buffalo S', query_after.trim()];
@@ -243,6 +249,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bclique\b/g, '');
     if (query_before !== query_after) return ['Clique', query_after.trim()];
 
+    query_after = query_before.replace(/\bcliquewagon\b/g, '');
+    if (query_before !== query_after) return ['Clique Wagon', query_after.trim()];
+    
     query_after = query_before.replace(/\bclub\b/g, '');
     if (query_before !== query_after) return ['Club', query_after.trim()];
 
@@ -530,6 +539,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     
         query_after = query_before.replace(/\bhotringeveron\b/g, '');
     if (query_before !== query_after) return ['Hotring Everon', query_after.trim()];
+
+        query_after = query_before.replace(/\bhotringhellfire\b/g, '');
+    if (query_before !== query_after) return ['Hotring Hellfire', query_after.trim()];
     
     query_after = query_before.replace(/\bhotringsabre\b/g, '');
     if (query_before !== query_after) return ['Hotring Sabre', query_after.trim()];
@@ -590,7 +602,10 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     
     query_after = query_before.replace(/\bitaligto\b/g, '');
     if (query_before !== query_after) return ['Itali GTO', query_after.trim()];
-
+    
+    query_after = query_before.replace(/\bitaligtostingertt\b/g, '');
+    if (query_before !== query_after) return ['Itali GTO Stinger TT', query_after.trim()];
+    
     query_after = query_before.replace(/\bitalirsx\b/g, '');
     if (query_before !== query_after) return ['Itali RSX', query_after.trim()];
 
@@ -644,6 +659,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
      query_after = query_before.replace(/\bkurumaarmoured\b/g, '');
     if (query_before !== query_after) return ['Kuruma Armoured', query_after.trim()];
+    
+    query_after = query_before.replace(/\blacoureuser\b/g, '');
+    if (query_before !== query_after) return ['La Coureuse', query_after.trim()];
     
     query_after = query_before.replace(/\blandstalker\b/g, '');
     if (query_before !== query_after) return ['Landstalker', query_after.trim()];
@@ -701,6 +719,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
      query_after = query_before.replace(/\bmonroe\b/g, '');
     if (query_before !== query_after) return ['Monroe', query_after.trim()];
+
+     query_after = query_before.replace(/\bmonstrociti\b/g, '');
+    if (query_before !== query_after) return ['MonstroCiti', query_after.trim()];
     
     query_after = query_before.replace(/\bmoonbeam\b/g, '');
     if (query_before !== query_after) return ['Moonbeam', query_after.trim()];
@@ -845,6 +866,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
     query_after = query_before.replace(/\braptor\b/g, '');
     if (query_before !== query_after) return ['Raptor', query_after.trim()];
+    
+    query_after = query_before.replace(/\bratel\b/g, '');
+    if (query_before !== query_after) return ['Ratel', query_after.trim()];
     
     query_after = query_before.replace(/\bratloader\b/g, '');
     if (query_before !== query_after) return ['Rat Loader', query_after.trim()];
@@ -1227,6 +1251,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
         query_after = query_before.replace(/\bvoodoocustom\b/g, '');
     if (query_before !== query_after) return ['Voodoo Custom', query_after.trim()];
 
+    query_after = query_before.replace(/\bwaltonl35\b/g, '');
+    if (query_before !== query_after) return ['Walton L35', query_after.trim()];
+    
     query_after = query_before.replace(/\bwarrener\b/g, '');
     if (query_before !== query_after) return ['Warrener', query_after.trim()];
 
