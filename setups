@@ -660,7 +660,7 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
      query_after = query_before.replace(/\bkurumaarmoured\b/g, '');
     if (query_before !== query_after) return ['Kuruma Armoured', query_after.trim()];
     
-    query_after = query_before.replace(/\blacoureuser\b/g, '');
+    query_after = query_before.replace(/\blacoureuse\b/g, '');
     if (query_before !== query_after) return ['La Coureuse', query_after.trim()];
     
     query_after = query_before.replace(/\blandstalker\b/g, '');
