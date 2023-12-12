@@ -1278,8 +1278,8 @@ query_after = query_before.replace(/\bturismor\b/g, '');
     query_after = query_before.replace(/\bvisione\b/g, '');
     if (query_before !== query_after) return ['Visione', query_after.trim()];
 
-    query_after = query_before.replace(/\bvivante\b/g, '');
-    if (query_before !== query_after) return ['Vivante', query_after.trim()];
+    query_after = query_before.replace(/\bvivanite\b/g, '');
+    if (query_before !== query_after) return ['Vivanite', query_after.trim()];
 
     query_after = query_before.replace(/\bvoltic\b/g, '');
     if (query_before !== query_after) return ['Voltic', query_after.trim()];
