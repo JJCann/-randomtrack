@@ -72,7 +72,10 @@ function parse_query(query_before='') {
     query_after = query_before.replace(/\badder\b/g, '');
     if (query_before !== query_after) return ['Adder', query_after.trim()];
 
-    query_after = query_before.replace(/\balpha\b/g, '');
+    query_after = query_before.replace(/\baleutian\b/g, '');
+    if (query_before !== query_after) return ['Aleutian', query_after.trim()];
+
+query_after = query_before.replace(/\balpha\b/g, '');
     if (query_before !== query_after) return ['Alpha', query_after.trim()];
 
     query_after = query_before.replace(/\barbitergt\b/g, '');
@@ -89,6 +92,9 @@ function parse_query(query_before='') {
     
         query_after = query_before.replace(/\basterope\b/g, '');
     if (query_before !== query_after) return ['Asterope', query_after.trim()];
+
+        query_after = query_before.replace(/\basteropegz\b/g, '');
+    if (query_before !== query_after) return ['Asterope GZ', query_after.trim()];
 
         query_after = query_before.replace(/\bastron\b/g, '');
     if (query_before !== query_after) return ['Astron', query_after.trim()];
@@ -107,6 +113,9 @@ function parse_query(query_before='') {
 
     query_after = query_before.replace(/\bballerst\b/g, '');
     if (query_before !== query_after) return ['Baller ST', query_after.trim()];
+
+    query_after = query_before.replace(/\bballerstd\b/g, '');
+    if (query_before !== query_after) return ['Baller ST-D', query_after.trim()];
 
     query_after = query_before.replace(/\bbanshee\b/g, '');
     if (query_before !== query_after) return ['Banshee', query_after.trim()];
@@ -225,6 +234,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bcavalcadeold\b/g, '');
     if (query_before !== query_after) return ['Cavalcade (Old)', query_after.trim()];
 
+    query_after = query_before.replace(/\bcavalcadexl\b/g, '');
+    if (query_before !== query_after) return ['Cavalcade XL', query_after.trim()];
+
     query_after = query_before.replace(/\bcheburek\b/g, '');
     if (query_before !== query_after) return ['Cheburek', query_after.trim()];
 
@@ -333,13 +345,19 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bdominatorasp\b/g, '');
     if (query_before !== query_after) return ['Dominator ASP', query_after.trim()];
     
-    query_after = query_before.replace(/\bdominatorgtt\b/g, '');
+    query_after = query_before.replace(/\bdominatorgt\b/g, '');
+    if (query_before !== query_after) return ['Dominator GT', query_after.trim()];
+
+query_after = query_before.replace(/\bdominatorgtt\b/g, '');
     if (query_before !== query_after) return ['Dominator GTT', query_after.trim()];
     
     query_after = query_before.replace(/\bdominatorgtx\b/g, '');
     if (query_before !== query_after) return ['Dominator GTX', query_after.trim()];
     
-    query_after = query_before.replace(/\bdr1\b/g, '');
+    query_after = query_before.replace(/\bdorado\b/g, '');
+    if (query_before !== query_after) return ['Dorado', query_after.trim()];
+
+query_after = query_before.replace(/\bdr1\b/g, '');
     if (query_before !== query_after) return ['DR1', query_after.trim()];
     
     query_after = query_before.replace(/\bdraugur\b/g, '');
@@ -453,6 +471,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
         query_after = query_before.replace(/\bfreecrawler\b/g, '');
     if (query_before !== query_after) return ['Freecrawler', query_after.trim()];
 
+        query_after = query_before.replace(/\bfr36\b/g, '');
+    if (query_before !== query_after) return ['FR36', query_after.trim()];
+
     query_after = query_before.replace(/\bfugitive\b/g, '');
     if (query_before !== query_after) return ['Fugitive', query_after.trim()];
 
@@ -563,6 +584,12 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
     query_after = query_before.replace(/\bimpaler\b/g, '');
     if (query_before !== query_after) return ['Impaler', query_after.trim()];
+
+    query_after = query_before.replace(/\bimpalerlx\b/g, '');
+    if (query_before !== query_after) return ['Impaler LX', query_after.trim()];
+
+    query_after = query_before.replace(/\bimpalersz\b/g, '');
+    if (query_before !== query_after) return ['Impaler SZ', query_after.trim()];
 
     query_after = query_before.replace(/\binfernus\b/g, '');
     if (query_before !== query_after) return ['Infernus', query_after.trim()];
@@ -1130,6 +1157,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
     query_after = query_before.replace(/\btempesta\b/g, '');
     if (query_before !== query_after) return ['Tempesta', query_after.trim()];
+
+    query_after = query_before.replace(/\bterminus\b/g, '');
+    if (query_before !== query_after) return ['Terminus', query_after.trim()];
     
     query_after = query_before.replace(/\btezeract\b/g, '');
     if (query_before !== query_after) return ['Tezeract', query_after.trim()];
@@ -1176,7 +1206,10 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
     query_after = query_before.replace(/\bturismoclassic\b/g, '');
     if (query_before !== query_after) return ['Turismo Classic', query_after.trim()];
 
-    query_after = query_before.replace(/\bturismor\b/g, '');
+    query_after = query_before.replace(/\bturismoomaggio\b/g, '');
+    if (query_before !== query_after) return ['Turismo Omaggio', query_after.trim()];
+
+query_after = query_before.replace(/\bturismor\b/g, '');
     if (query_before !== query_after) return ['Turismo R', query_after.trim()];
 
     query_after = query_before.replace(/\btyrant\b/g, '');
@@ -1221,6 +1254,9 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
             query_after = query_before.replace(/\bvigerozx\b/g, '');
     if (query_before !== query_after) return ['Vigero ZX', query_after.trim()];
 
+            query_after = query_before.replace(/\bvigerozxconvertible\b/g, '');
+    if (query_before !== query_after) return ['Vigero ZX Convertible', query_after.trim()];
+
        query_after = query_before.replace(/\bvigilante\b/g, '');
     if (query_before !== query_after) return ['Vigilante', query_after.trim()];
 
@@ -1241,7 +1277,10 @@ query_after = query_before.replace(/\bcalicogtf\b/g, '');
 
     query_after = query_before.replace(/\bvisione\b/g, '');
     if (query_before !== query_after) return ['Visione', query_after.trim()];
-    
+
+    query_after = query_before.replace(/\bvivante\b/g, '');
+    if (query_before !== query_after) return ['Vivante', query_after.trim()];
+
     query_after = query_before.replace(/\bvoltic\b/g, '');
     if (query_before !== query_after) return ['Voltic', query_after.trim()];
     
