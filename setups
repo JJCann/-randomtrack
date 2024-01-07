@@ -813,7 +813,10 @@ query_after = query_before.replace(/\bdr1\b/g, '');
     query_after = query_before.replace(/\bpariah\b/g, '');
     if (query_before !== query_after) return ['Pariah', query_after.trim()];
 
-    query_after = query_before.replace(/\bpatriot\b/g, '');
+    query_after = query_before.replace(/\bparkranger\b/g, '');
+    if (query_before !== query_after) return ['Park Ranger', query_after.trim()];
+
+query_after = query_before.replace(/\bpatriot\b/g, '');
     if (query_before !== query_after) return ['Patriot', query_after.trim()];
     
     query_after = query_before.replace(/\bpatriotmilspec\b/g, '');
